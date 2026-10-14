@@ -2,14 +2,14 @@
 
 **Polski** · [English](INSTALL.en.md)
 
-Trzy kroki: program (companion), wtyczka, sprawdzenie połączenia. Na Windows jeden instalator kładzie program
-i wtyczkę naraz. Do samego maskowania tekstu w czacie (poziom Free) wystarczy wtyczka; companion jest potrzebny
-do funkcji Pro: pełnego słownika imion i nazwisk, danych technicznych, plików i szyfrowanej sesji na dysku.
-Wszystko dzieje się na Twoim komputerze - wtyczka i companion nie łączą się z żadnym serwerem producenta.
+Kroki: program, wtyczka, sprawdzenie połączenia, licencja. Na Windows jeden instalator kładzie program i wtyczkę
+naraz. Potrzebne są oba: program wykrywa i podmienia dane, wtyczka przekazuje mu to, co wysyłasz do czatu - bez
+programu wtyczka nie maskuje danych. Wszystko dzieje się na Twoim komputerze - wtyczka i program nie łączą się
+z żadnym serwerem producenta.
 
 ## macOS
 
-1. **Pobierz i zainstaluj companion**: `donotfeedai-macos.pkg` →
+1. **Pobierz i zainstaluj program**: `donotfeedai-macos.pkg` →
    dwuklik → instalator poprosi o hasło administratora (instaluje w `/Applications`).
    Instalator sam rejestruje program w przeglądarkach.
    Instalator jest podpisany certyfikatem Developer ID i notaryzowany przez Apple, więc Gatekeeper nie
@@ -25,11 +25,13 @@ Wszystko dzieje się na Twoim komputerze - wtyczka i companion nie łączą się
    **Nie przenoś tego folderu** po załadowaniu - wtyczka ładuje się z niego przy każdym starcie przeglądarki.
 
 3. **Zamknij przeglądarkę całkowicie** (Cmd+Q - samo zamknięcie okna nie wystarczy) i uruchom ponownie.
-   Rejestrację companiona przeglądarka czyta przy starcie.
+   Rejestrację programu przeglądarka czyta przy starcie.
 
-4. **Sprawdź**: kliknij ikonę wtyczki (otworzy się panel boczny). Ma być `Companion: połączony` oraz linia
-   `wtyczka X · companion Y`. Chrome pokaże na starcie pasek „wyłącz rozszerzenia w trybie dewelopera” -
+4. **Sprawdź**: kliknij ikonę wtyczki (otworzy się panel boczny). Ma być `Program: połączony` oraz linia
+   z wersją wtyczki i programu. Chrome pokaże na starcie pasek „wyłącz rozszerzenia w trybie dewelopera” -
    zignoruj go; w wersji ze sklepu tego paska nie ma.
+
+5. **Wczytaj licencję** (patrz [Licencja](#licencja)).
 
 ## Windows
 
@@ -54,8 +56,10 @@ Windows 10 i 11 (x64), także Windows 11 na ARM.
    Restart przeglądarki nie jest potrzebny.
 
 3. **Sprawdź**: kliknij ikonę puzzla, przypnij Do Not Feed AI i kliknij ikonę - panel ma pokazać
-   `Companion: połączony`. Kolejne wersje instalatora aktualizują też wtyczkę w tym samym folderze
+   `Program: połączony`. Kolejne wersje instalatora aktualizują też wtyczkę w tym samym folderze
    (przeglądarka wczyta nową wersję przy następnym uruchomieniu).
+
+4. **Wczytaj licencję** (patrz [Licencja](#licencja)).
 
 **Wdrożenie przez dział IT** (bez okien dialogowych):
 
@@ -64,23 +68,29 @@ donotfeedai-windows-setup.exe /VERYSILENT /SUPPRESSMSGBOXES /NORESTART
 ```
 
 Instalacja jest per użytkownik, więc polecenie uruchamia się w kontekście użytkownika (w Intune: *Install
-behavior: User*). Log instalacji trafia do `%TEMP%\Setup Log *.txt`.
+behavior: User*). Log instalacji trafia do `%TEMP%\Setup Log *.txt`. Domyślny folder to
+`%LOCALAPPDATA%\Programs\donotfeedai`; inny można podać parametrem `/DIR="D:\Programy\donotfeedai"` (instalator nie
+pyta o folder w oknie, a instrukcja dla użytkowników zakłada folder domyślny).
 
-## Czego potrzebuje companion, a czego nie
+## Gdy programu nie ma albo nie odpowiada
 
-| funkcja | bez companiona | z companionem |
-|---|---|---|
-| maskowanie tekstu w czacie | tak | tak |
-| przywracanie odpowiedzi AI | tak | tak |
-| pliki xlsx / docx / csv / txt / konfiguracje / logi | nie (plik zatrzymany) | tak |
-| dane techniczne: sekrety, hosty, IP, loginy | nie | tak |
-| sesja szyfrowana na dysku | nie (tylko pamięć karty) | tak |
+Wtyczka nie ma własnego silnika, więc bez programu nie maskuje danych i mówi to wprost:
+
+| sytuacja | pasek w czacie | wysłanie wiadomości | pliki |
+|---|---|---|---|
+| programu nie ma | „Zainstaluj program Do Not Feed AI” | po pytaniu „Wyślij bez maskowania” | zatrzymane |
+| program nie odpowiada | „Ochrona niedostępna” | po pytaniu „Wyślij bez maskowania” | zatrzymane |
+| program starszy niż wtyczka | „Program za stary” | po pytaniu „Wyślij bez maskowania” | zatrzymane |
+| brak licencji | „Ochrona wyłączona: brak licencji” (czerwony) | bez zmian, bez maskowania | bez zmian |
+
+Program nie odpowiada: zamknij przeglądarkę całkowicie i uruchom ponownie; jeśli to nie pomoże, zainstaluj
+program jeszcze raz.
 
 ## Aktualizacja
 
-**Companion**: pobierz nowy instalator z najnowszego wydania (`donotfeedai-macos.pkg` albo
-`donotfeedai-windows-setup.exe`) i zainstaluj - nadpisuje poprzednią wersję (licencja i sesje zostają
-w katalogu danych użytkownika).
+**Program**: pobierz nowy instalator z najnowszego wydania (`donotfeedai-macos.pkg` albo
+`donotfeedai-windows-setup.exe`) i zainstaluj - nadpisuje poprzednią wersję (licencja zostaje w katalogu danych
+użytkownika). Program i wtyczkę aktualizuj razem: wtyczka nie współpracuje ze starszym programem.
 
 **Wtyczka** (załadowana jako rozpakowana) nie aktualizuje się sama. Nowa wersja to podmiana plików:
 
@@ -91,12 +101,12 @@ w katalogu danych użytkownika).
    - wskaż nowy folder w **Załaduj rozpakowane** - identyfikator wtyczki jest stały, więc Chrome podmieni wersję,
      nie tworząc drugiej kopii.
 3. Odśwież karty czatu (Cmd+R / F5). Karta otwarta przed aktualizacją działa jeszcze na starej kopii wtyczki.
-4. Sprawdź linię `wtyczka X · companion Y` - obie wersje powinny być równe.
+4. Sprawdź w panelu linię z wersją wtyczki i programu - obie wersje powinny być równe.
 
 Czego **nie** trzeba robić: nie usuwaj wtyczki (kosz w `chrome://extensions`) - przy podmianie plików nic nie
-tracisz, a usuwanie to zbędne ryzyko dla ustawień, licencji i sesji. Ustawienia, licencja i sesja zaszyfrowana
-na dysku przechodzą aktualizację bez zmian; ginie tylko sesja w trybie „tylko w pamięci”, bo trzyma się
-w pamięci przeglądarki.
+tracisz, a usuwanie to zbędne ryzyko dla ustawień. Ustawienia i licencja przechodzą aktualizację bez zmian.
+Mapy zamienników otwartych kart program wczytuje po ponownym połączeniu; po restarcie przeglądarki zaczynają się
+od nowa.
 
 ## Odinstalowanie
 
@@ -104,17 +114,19 @@ w pamięci przeglądarki.
 
 ```
 sudo /Applications/donotfeedai/uninstall.sh            # binarki + rejestracja w przeglądarkach
-sudo /Applications/donotfeedai/uninstall.sh --purge    # dodatkowo licencja i sesje (pyta o zgodę)
+sudo /Applications/donotfeedai/uninstall.sh --purge    # dodatkowo licencja i kopie map kart (pyta o zgodę)
 ```
 
 **Windows**: **Ustawienia → Aplikacje → Zainstalowane aplikacje** → *Do Not Feed AI companion* → **Odinstaluj**
-(usuwa program i rejestrację w przeglądarkach). Licencja i sesje zostają; żeby usunąć i je, skasuj folder
+(usuwa program i rejestrację w przeglądarkach). Licencja zostaje; żeby usunąć i ją, skasuj folder
 `%LOCALAPPDATA%\donotfeedai`, a w **Menedżerze poświadczeń → Poświadczenia systemu Windows** wpisy z „donotfeedai".
 
 Wtyczkę usuwa się osobno w `chrome://extensions` (Firefox: `about:debugging`).
 
-## Licencja i poziomy
+## Licencja
 
-Bez pliku licencji masz **7 dni pełnego Pro** od pierwszego uruchomienia, potem wtyczka przechodzi na Free.
-Plik licencji (`.lic`) wczytuje się w popupie wtyczki („Wczytaj plik licencji”). Licencja jest sprawdzana
-lokalnie podpisem cyfrowym - nie ma serwera licencji i nie ma połączeń sieciowych.
+Program działa z licencją Pro albo Business. Okres próbny to licencja z krótką datą ważności - wyślemy ją na
+prośbę: [kontakt@donotfeedai.pl](mailto:kontakt@donotfeedai.pl). Bez licencji ochrona jest wyłączona.
+Plik licencji (`.lic`) wczytuje się w panelu wtyczki („Wczytaj plik licencji”) albo poleceniem
+`dnf license install plik.lic`; w firmie plik może położyć w katalogu danych MDM. Licencja jest sprawdzana
+lokalnie przez program podpisem cyfrowym - nie ma serwera licencji i nie ma połączeń sieciowych.
