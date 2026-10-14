@@ -38,15 +38,15 @@ Website: [donotfeedai.com](https://donotfeedai.com) · Privacy policy: [donotfee
 
 The `latest/download/...` links always point to the newest version, so they never need updating.
 All releases (with version numbers and changelogs):
-[github.com/donotfeedai/donotfeedai/releases](https://github.com/donotfeedai/donotfeedai/releases).
+[github.com/donotfeedai/download/releases](https://github.com/donotfeedai/download/releases).
 
 | file | for |
 |---|---|
-| **[donotfeedai-macos.pkg](https://github.com/donotfeedai/donotfeedai/releases/latest/download/donotfeedai-macos.pkg)** | **macOS** — companion: signed and notarized installer, Gatekeeper will not complain |
-| **[donotfeedai-windows-setup.exe](https://github.com/donotfeedai/donotfeedai/releases/latest/download/donotfeedai-windows-setup.exe)** | **Windows 10/11** - companion: per-user installer, no administrator rights. Code-signed (certificate issued by Microsoft), publisher: Sebastian Obara It&Consulting |
-| **[donotfeedai-wtyczka-chrome.zip](https://github.com/donotfeedai/donotfeedai/releases/latest/download/donotfeedai-wtyczka-chrome.zip)** | **Chrome, Edge, Brave, Chromium** — extension, loaded unpacked |
-| **[donotfeedai-wtyczka-firefox.zip](https://github.com/donotfeedai/donotfeedai/releases/latest/download/donotfeedai-wtyczka-firefox.zip)** | **Firefox** — the same extension, different manifest |
-| **[SHA256SUMS.txt](https://github.com/donotfeedai/donotfeedai/releases/latest/download/SHA256SUMS.txt)** | checksums for the downloaded files |
+| **[donotfeedai-macos.pkg](https://github.com/donotfeedai/download/releases/latest/download/donotfeedai-macos.pkg)** | **macOS** — companion: signed and notarized installer, Gatekeeper will not complain |
+| **[donotfeedai-windows-setup.exe](https://github.com/donotfeedai/download/releases/latest/download/donotfeedai-windows-setup.exe)** | **Windows 10/11** - companion: per-user installer, no administrator rights. Code-signed (certificate issued by Microsoft), publisher: Sebastian Obara It&Consulting |
+| **[donotfeedai-wtyczka-chrome.zip](https://github.com/donotfeedai/download/releases/latest/download/donotfeedai-wtyczka-chrome.zip)** | **Chrome, Edge, Brave, Chromium** — extension, loaded unpacked |
+| **[donotfeedai-wtyczka-firefox.zip](https://github.com/donotfeedai/download/releases/latest/download/donotfeedai-wtyczka-firefox.zip)** | **Firefox** — the same extension, different manifest |
+| **[SHA256SUMS.txt](https://github.com/donotfeedai/download/releases/latest/download/SHA256SUMS.txt)** | checksums for the downloaded files |
 
 The extension works on chat text right away. **The companion is only needed for files** (xlsx, docx, csv, txt,
 configs, logs) and for the encrypted on-disk session.
