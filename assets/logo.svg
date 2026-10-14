@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Do Not Feed AI" viewBox="0 0 120 120" width="96" height="96">
+  <!-- dymek czatu (kolor marki) z paskiem zamaskowanym w kolorze maskowania: to samo, co podświetlenie zamienników w demo -->
+  <path fill="#1f2dae" d="M14 6h92a10 10 0 0 1 10 10v58a10 10 0 0 1-10 10H50l-24 24V84H14A10 10 0 0 1 4 74V16A10 10 0 0 1 14 6z"/>
+  <rect fill="#ffffff" x="20" y="30" width="52" height="12" rx="6"/>
+  <rect fill="#c9781a" x="78" y="30" width="22" height="12" rx="6"/>
+  <rect fill="#ffffff" x="20" y="52" width="80" height="12" rx="6"/>
+</svg>

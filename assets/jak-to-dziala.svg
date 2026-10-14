@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-14 -14 928 218" width="928" height="218" role="img" aria-label="Przepływ: tekst i pliki są maskowane w przeglądarce lub w companionie na komputerze, do usługi AI trafiają zamienniki, odpowiedź wraca i jest przywracana lokalnie. Granica komputera nigdy nie jest przekroczona przez oryginały." font-family="'Source Sans 3',system-ui,sans-serif">
+<style>
+.canvas{fill:#0f1020;stroke:#2e3255;stroke-width:1}
+svg{display:block;max-width:100%;height:auto;font:14px "Source Sans 3",sans-serif;color:#e9eaf5}
+.box{fill:#171a33;stroke:currentColor;stroke-width:1.2}
+.box.brand{fill:#8f9bff;stroke:#8f9bff}
+.box.mask{fill:#3a2c17;stroke:#e6a04f}
+.box.safe{fill:#173423;stroke:#7ee08a}
+text{fill:currentColor}
+.on{fill:#0f1140}
+.t{font-weight:600}
+.s{fill:#a0a3bd;font-size:12px}
+.lbl{font:500 12px "JetBrains Mono",monospace;fill:#a0a3bd}
+.edge{stroke:currentColor;stroke-width:1.2;fill:none}
+.edge.brand{stroke:#8f9bff;stroke-width:1.6}
+.zone{fill:none;stroke:#a0a3bd;stroke-dasharray:5 4}
+.zl{fill:#a0a3bd;font:500 12px "JetBrains Mono",monospace;letter-spacing:.08em;text-transform:uppercase}
+</style>
+<rect class="canvas" x="-14" y="-14" width="928" height="218" rx="10"/>
+
+      <defs><marker id="a1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="currentColor"/></marker><marker id="a2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="var(--brand)"/></marker></defs>
+      <rect class="zone" x="16" y="16" width="560" height="158" rx="6"/><text class="zl" x="28" y="36">Twój komputer</text>
+      <rect class="zone" x="640" y="16" width="244" height="158" rx="6"/><text class="zl" x="652" y="36">Usługa AI (ChatGPT, Claude…)</text>
+      <g class="box"><rect x="36" y="56" width="150" height="54" rx="4"/></g><text class="t" x="48" y="79">Ty</text><text class="s" x="48" y="97">tekst w czacie, plik xlsx/docx</text>
+      <path class="edge" d="M186,83 L222,83" marker-end="url(#a1)"/>
+      <g class="box brand"><rect x="222" y="56" width="170" height="54" rx="4"/></g><text class="t on" x="234" y="79">Do Not Feed AI</text><text class="s on" x="234" y="97" style="fill:var(--brand-ink);opacity:.85">wykrywa i podmienia lokalnie</text>
+      <path class="edge" d="M392,83 L428,83" marker-end="url(#a1)"/>
+      <g class="box mask"><rect x="428" y="56" width="130" height="54" rx="4"/></g><text class="t" x="440" y="79">zamienniki</text><text class="s" x="440" y="97">Barbara Zalewska,</text>
+      <path class="edge brand" d="M558,83 L652,83" marker-end="url(#a2)"/><text class="lbl" x="566" y="74">sieć</text>
+      <g class="box"><rect x="652" y="56" width="216" height="54" rx="4"/></g><text class="t" x="664" y="79">model</text><text class="s" x="664" y="97">widzi tylko dane fikcyjne</text>
+      <path class="edge brand" d="M760,110 L760,140 L330,140 L330,110" marker-end="url(#a2)"/>
+      <text class="lbl" x="500" y="156">odpowiedź z zamiennikami</text>
+      <g class="box safe"><rect x="36" y="124" width="150" height="40" rx="4"/></g><text class="t" x="48" y="141">ekran</text><text class="s" x="48" y="156">oryginały przywrócone</text>
+      <path class="edge" d="M330,140 L186,140" marker-end="url(#a1)"/>
+    </svg>
