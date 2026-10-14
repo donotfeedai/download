@@ -38,15 +38,15 @@ Strona: [donotfeedai.com](https://donotfeedai.com) · Polityka prywatności: [do
 
 Linki `latest/download/...` zawsze prowadzą do najnowszej wersji — nie trzeba ich zmieniać.
 Wszystkie wydania (z numerami wersji i opisem zmian):
-[github.com/donotfeedai/donotfeedai/releases](https://github.com/donotfeedai/donotfeedai/releases).
+[github.com/donotfeedai/download/releases](https://github.com/donotfeedai/download/releases).
 
 | plik | dla kogo |
 |---|---|
-| **[donotfeedai-macos.pkg](https://github.com/donotfeedai/donotfeedai/releases/latest/download/donotfeedai-macos.pkg)** | **macOS** — companion: instalator podpisany i notaryzowany, Gatekeeper nie będzie ostrzegał |
-| **[donotfeedai-windows-setup.exe](https://github.com/donotfeedai/donotfeedai/releases/latest/download/donotfeedai-windows-setup.exe)** | **Windows 10/11** - companion: instalator na koncie użytkownika, bez uprawnień administratora. Podpisany cyfrowo (certyfikat wydany przez Microsoft), wydawca: Sebastian Obara It&Consulting |
-| **[donotfeedai-wtyczka-chrome.zip](https://github.com/donotfeedai/donotfeedai/releases/latest/download/donotfeedai-wtyczka-chrome.zip)** | **Chrome, Edge, Brave, Chromium** — wtyczka do załadowania jako rozpakowana |
-| **[donotfeedai-wtyczka-firefox.zip](https://github.com/donotfeedai/donotfeedai/releases/latest/download/donotfeedai-wtyczka-firefox.zip)** | **Firefox** — ta sama wtyczka, inny manifest |
-| **[SHA256SUMS.txt](https://github.com/donotfeedai/donotfeedai/releases/latest/download/SHA256SUMS.txt)** | sumy kontrolne pobranych plików |
+| **[donotfeedai-macos.pkg](https://github.com/donotfeedai/download/releases/latest/download/donotfeedai-macos.pkg)** | **macOS** — companion: instalator podpisany i notaryzowany, Gatekeeper nie będzie ostrzegał |
+| **[donotfeedai-windows-setup.exe](https://github.com/donotfeedai/download/releases/latest/download/donotfeedai-windows-setup.exe)** | **Windows 10/11** - companion: instalator na koncie użytkownika, bez uprawnień administratora. Podpisany cyfrowo (certyfikat wydany przez Microsoft), wydawca: Sebastian Obara It&Consulting |
+| **[donotfeedai-wtyczka-chrome.zip](https://github.com/donotfeedai/download/releases/latest/download/donotfeedai-wtyczka-chrome.zip)** | **Chrome, Edge, Brave, Chromium** — wtyczka do załadowania jako rozpakowana |
+| **[donotfeedai-wtyczka-firefox.zip](https://github.com/donotfeedai/download/releases/latest/download/donotfeedai-wtyczka-firefox.zip)** | **Firefox** — ta sama wtyczka, inny manifest |
+| **[SHA256SUMS.txt](https://github.com/donotfeedai/download/releases/latest/download/SHA256SUMS.txt)** | sumy kontrolne pobranych plików |
 
 Wtyczka działa od razu na tekście w czacie. **Companion jest potrzebny tylko do plików** (xlsx, docx, csv, txt,
 konfiguracje, logi) i do szyfrowanej sesji na dysku.
