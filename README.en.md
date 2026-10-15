@@ -23,7 +23,7 @@ agreement (OWU) supplied together with the licence.
 <img src="assets/browsers/edge.svg" width="20" alt="Edge"> Edge &nbsp;
 <img src="assets/browsers/brave.svg" width="20" alt="Brave"> Brave &nbsp;
 <img src="assets/browsers/chromium.svg" width="20" alt="Chromium"> Chromium and derivatives &nbsp;
-<img src="assets/browsers/firefox.svg" width="20" alt="Firefox"> Firefox <code>in preparation</code></p>
+<img src="assets/browsers/firefox.svg" width="20" alt="Firefox"> Firefox</p>
 
 <p><b>Masks in:</b>
 <picture><source media="(prefers-color-scheme: dark)" srcset="assets/chats/chatgpt-dark.svg"><img src="assets/chats/chatgpt.svg" width="20" alt="ChatGPT"></picture> ChatGPT &nbsp;
@@ -49,7 +49,8 @@ All releases (with version numbers and changelogs):
 | **[donotfeedai-macos.pkg](https://github.com/donotfeedai/download/releases/latest/download/donotfeedai-macos.pkg)** | **macOS** - program: signed and notarized installer, Gatekeeper will not complain |
 | **[donotfeedai-windows-setup.exe](https://github.com/donotfeedai/download/releases/latest/download/donotfeedai-windows-setup.exe)** | **Windows 10/11** - program and extension: per-user installer, no administrator rights. Code-signed (certificate issued by Microsoft), publisher: Sebastian Obara It&Consulting |
 | **[donotfeedai-wtyczka-chrome.zip](https://github.com/donotfeedai/download/releases/latest/download/donotfeedai-wtyczka-chrome.zip)** | **Chrome, Edge, Brave, Chromium** - extension, loaded unpacked |
-| **[donotfeedai-wtyczka-firefox.zip](https://github.com/donotfeedai/download/releases/latest/download/donotfeedai-wtyczka-firefox.zip)** | **Firefox** - the same extension, different manifest |
+| **[donotfeedai-wtyczka-firefox.xpi](https://donotfeedai.com/pobierz/donotfeedai-wtyczka-firefox.xpi)** | **Firefox** - extension signed by Mozilla: open the link in Firefox and click **Add**, it stays installed ([same file on GitHub](https://github.com/donotfeedai/download/releases/latest/download/donotfeedai-wtyczka-firefox.xpi)) |
+| [donotfeedai-wtyczka-firefox.zip](https://github.com/donotfeedai/download/releases/latest/download/donotfeedai-wtyczka-firefox.zip) | Firefox - the same extension unsigned, for testing as a temporary add-on |
 | **[SHA256SUMS.txt](https://github.com/donotfeedai/download/releases/latest/download/SHA256SUMS.txt)** | checksums for the downloaded files |
 
 **You need both: the program and the extension.** Without the program the extension does not mask anything - it
@@ -124,17 +125,18 @@ Short version (full steps: [INSTALL.en.md](INSTALL.en.md)):
 1. **Program**: on macOS open `donotfeedai-macos.pkg` and follow the installer (it asks for an administrator
    password because it installs into `/Applications`). On Windows run `donotfeedai-windows-setup.exe` (no
    administrator rights; about signing and SmartScreen see [INSTALL.en.md](INSTALL.en.md#windows)).
-2. **Extension**: unzip `donotfeedai-wtyczka-chrome.zip` (or `-firefox.zip`), go to `chrome://extensions`
-   (Firefox: `about:debugging#/runtime/this-firefox`), enable developer mode and point it at the unpacked folder.
+2. **Extension**: Firefox - open [donotfeedai-wtyczka-firefox.xpi](https://donotfeedai.com/pobierz/donotfeedai-wtyczka-firefox.xpi) in it and click **Add**.
+   Chrome, Edge, Brave - unzip `donotfeedai-wtyczka-chrome.zip`, go to `chrome://extensions`, enable developer
+   mode and point it at the unpacked folder.
 3. **Quit and restart the browser.** The extension panel should show the program as connected.
 4. **Licence**: in the extension panel, Licence section, load the `.lic` file. Without a licence protection is off
    (red bar in the chat); we send a trial licence on request.
 
 | system | extension | program |
 |---|---|---|
-| macOS | Chrome/Edge/Brave/Firefox + load unpacked | `donotfeedai-macos.pkg` |
-| Windows | in the installer (Chrome/Edge/Brave/Firefox + load unpacked) | `donotfeedai-windows-setup.exe` (code-signed) |
-| Linux | Chromium/Firefox + load unpacked | in preparation - without the program the extension does not mask anything |
+| macOS | Chrome/Edge/Brave + load unpacked; Firefox: signed `.xpi` | `donotfeedai-macos.pkg` |
+| Windows | in the installer (Chrome/Edge/Brave + load unpacked); Firefox: signed `.xpi` | `donotfeedai-windows-setup.exe` (code-signed) |
+| Linux | Chromium + load unpacked; Firefox: signed `.xpi` | in preparation - without the program the extension does not mask anything |
 
 ## Tiers
 

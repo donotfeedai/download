@@ -15,12 +15,13 @@ machine - neither the extension nor the program talks to any vendor server.
    The installer is signed with a Developer ID certificate and notarized by Apple, so Gatekeeper should leave it
    alone. If it does not, check the signature: `pkgutil --check-signature donotfeedai-macos.pkg`.
 
-2. **Extension**: unzip `donotfeedai-wtyczka-chrome.zip` (Firefox: `-firefox.zip`) somewhere permanent
-   (e.g. `~/Documents`), then:
-   - Chrome / Edge / Brave / Chromium: `chrome://extensions` → **Developer mode** → **Load unpacked** → pick the
-     `donotfeedai-wtyczka-chrome-<version>` folder (the one with `manifest.json` inside),
-   - Firefox: `about:debugging#/runtime/this-firefox` → **Load Temporary Add-on** → pick `manifest.json` from the
-     unpacked folder. Temporary add-ons disappear when Firefox restarts; a permanent version will be on AMO.
+2. **Extension**:
+   - Firefox: open [donotfeedai.com/pobierz/donotfeedai-wtyczka-firefox.xpi](https://donotfeedai.com/pobierz/donotfeedai-wtyczka-firefox.xpi) in Firefox, click
+     **Continue to Installation** and **Add**. The extension is signed by Mozilla and stays installed, no developer
+     mode needed. The same file is in the release as `donotfeedai-wtyczka-firefox.xpi`.
+   - Chrome / Edge / Brave / Chromium: unzip `donotfeedai-wtyczka-chrome.zip` somewhere permanent
+     (e.g. `~/Documents`), then `chrome://extensions` → **Developer mode** → **Load unpacked** → pick the
+     `donotfeedai-wtyczka-chrome-<version>` folder (the one with `manifest.json` inside).
 
    **Do not move that folder** afterwards - the extension loads from it on every browser start.
 
@@ -51,8 +52,8 @@ Windows 10 and 11 (x64), including Windows 11 on ARM.
    `%LOCALAPPDATA%\Programs\donotfeedai\wtyczka-chrome` - nothing to download or unzip. In `edge://extensions`
    (Chrome: `chrome://extensions`) turn on **Developer mode** (in Edge the switch is at the bottom of the left pane),
    click **Load unpacked**, paste the path above into the address bar of the folder dialog, press Enter and click
-   **Select Folder**. Firefox: **Load Temporary Add-on** in `about:debugging#/runtime/this-firefox` and the file
-   `...\wtyczka-firefox\manifest.json`. No browser restart is needed.
+   **Select Folder**. Firefox: open [donotfeedai.com/pobierz/donotfeedai-wtyczka-firefox.xpi](https://donotfeedai.com/pobierz/donotfeedai-wtyczka-firefox.xpi) and click
+   **Continue to Installation** → **Add** (signed by Mozilla, stays installed). No browser restart is needed.
 
 3. **Check**: click the puzzle icon, pin Do Not Feed AI and click its icon - the panel should show the program as
    connected. Later installer versions also update the extension in the same folder (the browser loads the new
@@ -121,7 +122,7 @@ sudo /Applications/donotfeedai/uninstall.sh --purge    # also licence and tab ma
 and the browser registration). The licence stays; to remove it too, delete the `%LOCALAPPDATA%\donotfeedai`
 folder and, in **Credential Manager → Windows Credentials**, the entries containing "donotfeedai".
 
-The extension is removed separately in `chrome://extensions` (Firefox: `about:debugging`).
+The extension is removed separately in `chrome://extensions` (Firefox: `about:addons` → Do Not Feed AI → **Remove**).
 
 ## Licence
 

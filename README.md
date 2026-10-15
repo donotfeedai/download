@@ -23,7 +23,7 @@ warunki korzystania określa umowa licencyjna (OWU) przekazywana razem z licencj
 <img src="assets/browsers/edge.svg" width="20" alt="Edge"> Edge &nbsp;
 <img src="assets/browsers/brave.svg" width="20" alt="Brave"> Brave &nbsp;
 <img src="assets/browsers/chromium.svg" width="20" alt="Chromium"> Chromium i pochodne &nbsp;
-<img src="assets/browsers/firefox.svg" width="20" alt="Firefox"> Firefox <code>w przygotowaniu</code></p>
+<img src="assets/browsers/firefox.svg" width="20" alt="Firefox"> Firefox</p>
 
 <p><b>Maskuje w:</b>
 <picture><source media="(prefers-color-scheme: dark)" srcset="assets/chats/chatgpt-dark.svg"><img src="assets/chats/chatgpt.svg" width="20" alt="ChatGPT"></picture> ChatGPT &nbsp;
@@ -49,7 +49,8 @@ Wszystkie wydania (z numerami wersji i opisem zmian):
 | **[donotfeedai-macos.pkg](https://github.com/donotfeedai/download/releases/latest/download/donotfeedai-macos.pkg)** | **macOS** - program: instalator podpisany i notaryzowany, Gatekeeper nie będzie ostrzegał |
 | **[donotfeedai-windows-setup.exe](https://github.com/donotfeedai/download/releases/latest/download/donotfeedai-windows-setup.exe)** | **Windows 10/11** - program i wtyczka: instalator na koncie użytkownika, bez uprawnień administratora. Podpisany cyfrowo (certyfikat wydany przez Microsoft), wydawca: Sebastian Obara It&Consulting |
 | **[donotfeedai-wtyczka-chrome.zip](https://github.com/donotfeedai/download/releases/latest/download/donotfeedai-wtyczka-chrome.zip)** | **Chrome, Edge, Brave, Chromium** - wtyczka do załadowania jako rozpakowana |
-| **[donotfeedai-wtyczka-firefox.zip](https://github.com/donotfeedai/download/releases/latest/download/donotfeedai-wtyczka-firefox.zip)** | **Firefox** - ta sama wtyczka, inny manifest |
+| **[donotfeedai-wtyczka-firefox.xpi](https://donotfeedai.com/pobierz/donotfeedai-wtyczka-firefox.xpi)** | **Firefox** - wtyczka podpisana przez Mozillę: otwórz link w Firefoksie i kliknij **Dodaj**, zostaje na stałe ([ten sam plik na GitHubie](https://github.com/donotfeedai/download/releases/latest/download/donotfeedai-wtyczka-firefox.xpi)) |
+| [donotfeedai-wtyczka-firefox.zip](https://github.com/donotfeedai/download/releases/latest/download/donotfeedai-wtyczka-firefox.zip) | Firefox - ta sama wtyczka bez podpisu, do testów jako dodatek tymczasowy |
 | **[SHA256SUMS.txt](https://github.com/donotfeedai/download/releases/latest/download/SHA256SUMS.txt)** | sumy kontrolne pobranych plików |
 
 **Potrzebne są oba: program i wtyczka.** Bez programu wtyczka nie maskuje danych - mówi to na pasku w czacie
@@ -123,17 +124,18 @@ Skrót (pełna wersja: [INSTALACJA.md](INSTALACJA.md)):
 1. **Program**: na macOS otwórz `donotfeedai-macos.pkg` i przejdź instalator (poprosi o hasło administratora,
    bo instaluje program w `/Applications`). Na Windows uruchom `donotfeedai-windows-setup.exe` (bez uprawnień
    administratora; o podpisie i SmartScreen - patrz [INSTALACJA.md](INSTALACJA.md#windows)).
-2. **Wtyczka**: rozpakuj `donotfeedai-wtyczka-chrome.zip` (albo `-firefox.zip`), wejdź w `chrome://extensions`
-   (Firefox: `about:debugging#/runtime/this-firefox`), włącz tryb dewelopera i wskaż rozpakowany folder.
+2. **Wtyczka**: Firefox - otwórz w nim [donotfeedai-wtyczka-firefox.xpi](https://donotfeedai.com/pobierz/donotfeedai-wtyczka-firefox.xpi) i kliknij **Dodaj**.
+   Chrome, Edge, Brave - rozpakuj `donotfeedai-wtyczka-chrome.zip`, wejdź w `chrome://extensions`, włącz tryb
+   dewelopera i wskaż rozpakowany folder.
 3. **Zamknij i uruchom przeglądarkę ponownie.** W panelu wtyczki ma być `Program: połączony`.
 4. **Licencja**: w panelu wtyczki, w sekcji Licencja, wczytaj plik `.lic`. Bez licencji ochrona jest wyłączona
    (czerwony pasek w czacie); licencję próbną wyślemy na prośbę.
 
 | system | wtyczka | program |
 |---|---|---|
-| macOS | Chrome/Edge/Brave/Firefox + load unpacked | `donotfeedai-macos.pkg` |
-| Windows | w instalatorze (Chrome/Edge/Brave/Firefox + load unpacked) | `donotfeedai-windows-setup.exe` (podpisany cyfrowo) |
-| Linux | Chromium/Firefox + load unpacked | w przygotowaniu - bez programu wtyczka nie maskuje danych |
+| macOS | Chrome/Edge/Brave + load unpacked; Firefox: podpisany `.xpi` | `donotfeedai-macos.pkg` |
+| Windows | w instalatorze (Chrome/Edge/Brave + load unpacked); Firefox: podpisany `.xpi` | `donotfeedai-windows-setup.exe` (podpisany cyfrowo) |
+| Linux | Chromium + load unpacked; Firefox: podpisany `.xpi` | w przygotowaniu - bez programu wtyczka nie maskuje danych |
 
 ## Poziomy
 

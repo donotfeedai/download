@@ -15,12 +15,13 @@ z żadnym serwerem producenta.
    Instalator jest podpisany certyfikatem Developer ID i notaryzowany przez Apple, więc Gatekeeper nie
    powinien się przyczepić. Jeśli się przyczepi, sprawdź podpis: `pkgutil --check-signature donotfeedai-macos.pkg`.
 
-2. **Wtyczka**: rozpakuj `donotfeedai-wtyczka-chrome.zip` (Firefox: `-firefox.zip`) w stałym miejscu
-   (np. `~/Documents`), potem:
-   - Chrome / Edge / Brave / Chromium: `chrome://extensions` → **Tryb dewelopera** → **Załaduj rozpakowane** →
-     wskaż folder `donotfeedai-wtyczka-chrome-<wersja>` (ten z `manifest.json` w środku),
-   - Firefox: `about:debugging#/runtime/this-firefox` → **Załaduj tymczasowy dodatek** → wskaż `manifest.json`
-     z rozpakowanego folderu. Ładowanie tymczasowe znika po restarcie Firefoksa; wersja stała będzie w AMO.
+2. **Wtyczka**:
+   - Firefox: otwórz w Firefoksie [donotfeedai.com/pobierz/donotfeedai-wtyczka-firefox.xpi](https://donotfeedai.com/pobierz/donotfeedai-wtyczka-firefox.xpi), kliknij
+     **Kontynuuj instalację** i **Dodaj**. Wtyczka jest podpisana przez Mozillę i zostaje na stałe, bez trybu
+     dewelopera. Ten sam plik jest w wydaniu jako `donotfeedai-wtyczka-firefox.xpi`.
+   - Chrome / Edge / Brave / Chromium: rozpakuj `donotfeedai-wtyczka-chrome.zip` w stałym miejscu
+     (np. `~/Documents`), potem `chrome://extensions` → **Tryb dewelopera** → **Załaduj rozpakowane** →
+     wskaż folder `donotfeedai-wtyczka-chrome-<wersja>` (ten z `manifest.json` w środku).
 
    **Nie przenoś tego folderu** po załadowaniu - wtyczka ładuje się z niego przy każdym starcie przeglądarki.
 
@@ -51,8 +52,9 @@ Windows 10 i 11 (x64), także Windows 11 na ARM.
    `%LOCALAPPDATA%\Programs\donotfeedai\wtyczka-chrome` - nic nie pobierasz ani nie wypakowujesz.
    W `edge://extensions` (Chrome: `chrome://extensions`) włącz **Tryb dewelopera** (w Edge przełącznik na dole
    lewego panelu), kliknij **Załaduj rozpakowane**, w okienku wyboru folderu wklej powyższą ścieżkę w pasek adresu,
-   naciśnij Enter i kliknij **Wybierz folder**. Firefox: **Załaduj tymczasowy dodatek** w
-   `about:debugging#/runtime/this-firefox` i plik `...\wtyczka-firefox\manifest.json`.
+   naciśnij Enter i kliknij **Wybierz folder**. Firefox: otwórz
+   [donotfeedai.com/pobierz/donotfeedai-wtyczka-firefox.xpi](https://donotfeedai.com/pobierz/donotfeedai-wtyczka-firefox.xpi) i kliknij **Kontynuuj instalację** → **Dodaj**
+   (wtyczka podpisana przez Mozillę, zostaje na stałe).
    Restart przeglądarki nie jest potrzebny.
 
 3. **Sprawdź**: kliknij ikonę puzzla, przypnij Do Not Feed AI i kliknij ikonę - panel ma pokazać
@@ -121,7 +123,7 @@ sudo /Applications/donotfeedai/uninstall.sh --purge    # dodatkowo licencja i ko
 (usuwa program i rejestrację w przeglądarkach). Licencja zostaje; żeby usunąć i ją, skasuj folder
 `%LOCALAPPDATA%\donotfeedai`, a w **Menedżerze poświadczeń → Poświadczenia systemu Windows** wpisy z „donotfeedai".
 
-Wtyczkę usuwa się osobno w `chrome://extensions` (Firefox: `about:debugging`).
+Wtyczkę usuwa się osobno w `chrome://extensions` (Firefox: `about:addons` → Do Not Feed AI → **Usuń**).
 
 ## Licencja
 
