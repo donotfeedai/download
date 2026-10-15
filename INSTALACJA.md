@@ -113,7 +113,7 @@ od nowa.
 **macOS**:
 
 ```
-sudo /Applications/donotfeedai/uninstall.sh            # binarki + rejestracja w przeglądarkach
+sudo /Applications/donotfeedai/uninstall.sh            # binarki, ikona w pasku menu + rejestracja w przeglądarkach
 sudo /Applications/donotfeedai/uninstall.sh --purge    # dodatkowo licencja i kopie map kart (pyta o zgodę)
 ```
 
@@ -127,6 +127,7 @@ Wtyczkę usuwa się osobno w `chrome://extensions` (Firefox: `about:debugging`).
 
 Program działa z licencją Pro albo Business. Okres próbny to licencja z krótką datą ważności - wyślemy ją na
 prośbę: [kontakt@donotfeedai.pl](mailto:kontakt@donotfeedai.pl). Bez licencji ochrona jest wyłączona.
-Plik licencji (`.lic`) wczytuje się w panelu wtyczki („Wczytaj plik licencji”) albo poleceniem
+Plik licencji (`.lic`) wczytuje się na macOS w ikonie Do Not Feed AI w pasku menu, obok zegara („Wczytaj licencję…”
+albo „Wklej licencję ze schowka”), a na Windows w panelu wtyczki („Wczytaj plik licencji”). Zawsze działa też
 `dnf license install plik.lic`; w firmie plik może położyć w katalogu danych MDM. Licencja jest sprawdzana
 lokalnie przez program podpisem cyfrowym - nie ma serwera licencji i nie ma połączeń sieciowych.

@@ -113,7 +113,7 @@ start from scratch.
 **macOS**:
 
 ```
-sudo /Applications/donotfeedai/uninstall.sh            # binaries + browser registration
+sudo /Applications/donotfeedai/uninstall.sh            # binaries, menu bar icon + browser registration
 sudo /Applications/donotfeedai/uninstall.sh --purge    # also licence and tab map copies (asks for confirmation)
 ```
 
@@ -127,6 +127,7 @@ The extension is removed separately in `chrome://extensions` (Firefox: `about:de
 
 The program works with a Pro or Business licence. The trial is a licence with a short expiry date - we send it on
 request: [kontakt@donotfeedai.pl](mailto:kontakt@donotfeedai.pl). Without a licence protection is off.
-A licence file (`.lic`) is loaded in the extension panel ("Load a licence file") or with
-`dnf license install file.lic`; in a company, MDM can place it in the data folder. The licence is verified locally
+A licence file (`.lic`) is loaded on macOS in the Do Not Feed AI icon in the menu bar, next to the clock ("Load
+license…" or "Paste license from clipboard"), and on Windows in the extension panel ("Load a licence file").
+`dnf license install file.lic` always works too; in a company, MDM can place it in the data folder. The licence is verified locally
 by the program with a digital signature - there is no licence server and no network traffic.
