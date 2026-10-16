@@ -7,6 +7,9 @@ the extension in place at once. You need both: the program detects and replaces 
 what you send to the chat - without the program the extension does not mask anything. Everything happens on your
 machine - neither the extension nor the program talks to any vendor server.
 
+Supported browsers: Chrome, Edge and Firefox on Windows; Chrome and Firefox on macOS. Edge on macOS is not
+supported.
+
 ## macOS
 
 1. **Download and install the program**: `donotfeedai-macos.pkg` → double-click → the installer asks for an
@@ -19,7 +22,7 @@ machine - neither the extension nor the program talks to any vendor server.
    - Firefox: open [donotfeedai.com/pobierz/donotfeedai-wtyczka-firefox.xpi](https://donotfeedai.com/pobierz/donotfeedai-wtyczka-firefox.xpi) in Firefox, click
      **Continue to Installation** and **Add**. The extension is signed by Mozilla and stays installed, no developer
      mode needed. The same file is in the release as `donotfeedai-wtyczka-firefox.xpi`.
-   - Chrome / Edge / Brave / Chromium: unzip `donotfeedai-wtyczka-chrome.zip` somewhere permanent
+   - Chrome (Edge is not supported on macOS): unzip `donotfeedai-wtyczka-chrome.zip` somewhere permanent
      (e.g. `~/Documents`), then `chrome://extensions` → **Developer mode** → **Load unpacked** → pick the
      `donotfeedai-wtyczka-chrome-<version>` folder (the one with `manifest.json` inside).
 
@@ -40,7 +43,7 @@ Windows 10 and 11 (x64), including Windows 11 on ARM.
 
 1. **Download and run the installer**: `donotfeedai-windows-setup.exe` → double-click. The installer needs no
    administrator rights: it installs the program and the extension for your account
-   (`%LOCALAPPDATA%\Programs\donotfeedai`) and registers the program with Chrome, Edge, Brave, Chromium and Firefox
+   (`%LOCALAPPDATA%\Programs\donotfeedai`) and registers the program with Chrome, Edge and Firefox
    by itself. At the end it offers to open the page with the last step: https://donotfeedai.com/start
    The installer and the programs are **code-signed** with a certificate issued by Microsoft (Artifact Signing):
    the publisher is *Sebastian Obara It&Consulting* (right-click the file → **Properties → Digital Signatures**, or in

@@ -7,6 +7,9 @@ naraz. Potrzebne są oba: program wykrywa i podmienia dane, wtyczka przekazuje m
 programu wtyczka nie maskuje danych. Wszystko dzieje się na Twoim komputerze - wtyczka i program nie łączą się
 z żadnym serwerem producenta.
 
+Obsługiwane przeglądarki: na Windows Chrome, Edge i Firefox, na macOS Chrome i Firefox. Edge na macOS nie jest
+obsługiwany.
+
 ## macOS
 
 1. **Pobierz i zainstaluj program**: `donotfeedai-macos.pkg` →
@@ -19,7 +22,7 @@ z żadnym serwerem producenta.
    - Firefox: otwórz w Firefoksie [donotfeedai.com/pobierz/donotfeedai-wtyczka-firefox.xpi](https://donotfeedai.com/pobierz/donotfeedai-wtyczka-firefox.xpi), kliknij
      **Kontynuuj instalację** i **Dodaj**. Wtyczka jest podpisana przez Mozillę i zostaje na stałe, bez trybu
      dewelopera. Ten sam plik jest w wydaniu jako `donotfeedai-wtyczka-firefox.xpi`.
-   - Chrome / Edge / Brave / Chromium: rozpakuj `donotfeedai-wtyczka-chrome.zip` w stałym miejscu
+   - Chrome (Edge na macOS nie jest obsługiwany): rozpakuj `donotfeedai-wtyczka-chrome.zip` w stałym miejscu
      (np. `~/Documents`), potem `chrome://extensions` → **Tryb dewelopera** → **Załaduj rozpakowane** →
      wskaż folder `donotfeedai-wtyczka-chrome-<wersja>` (ten z `manifest.json` w środku).
 
@@ -40,7 +43,7 @@ Windows 10 i 11 (x64), także Windows 11 na ARM.
 
 1. **Pobierz i uruchom instalator**: `donotfeedai-windows-setup.exe` → dwuklik. Instalator nie potrzebuje
    uprawnień administratora: instaluje program i wtyczkę na Twoim koncie (`%LOCALAPPDATA%\Programs\donotfeedai`)
-   i sam rejestruje program w Chrome, Edge, Brave, Chromium i Firefoksie. Na koniec proponuje otwarcie strony
+   i sam rejestruje program w Chrome, Edge i Firefoksie. Na koniec proponuje otwarcie strony
    z ostatnim krokiem: https://donotfeedai.com/start
    Instalator i programy są **podpisane cyfrowo** certyfikatem wydanym przez Microsoft (Artifact Signing):
    wydawca to *Sebastian Obara It&Consulting* (prawy klik na pliku → **Właściwości → Podpisy cyfrowe**, albo w
