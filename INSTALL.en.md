@@ -129,7 +129,7 @@ The extension is removed separately in `chrome://extensions` (Firefox: `about:ad
 
 ## Licence
 
-The program works with a Pro or Business licence. The trial is a licence with a short expiry date - we send it on
+The program works with a Pro or Business licence. We send a trial licence on
 request: [kontakt@donotfeedai.pl](mailto:kontakt@donotfeedai.pl). Without a licence protection is off.
 A licence file (`.lic`) is loaded on macOS in the Do Not Feed AI icon in the menu bar, next to the clock ("Load
 license…" or "Paste license from clipboard"), and on Windows in the extension panel ("Load a licence file").

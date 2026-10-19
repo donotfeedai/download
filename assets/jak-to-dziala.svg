@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="-14 -14 928 218" width="928" height="218" role="img" aria-label="Przepływ: tekst i pliki są maskowane przez program na komputerze, do usługi AI trafiają zamienniki, odpowiedź wraca i jest przywracana lokalnie. Granica komputera nigdy nie jest przekroczona przez oryginały." font-family="'Source Sans 3',system-ui,sans-serif">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-14 -14 928 218" width="928" height="218" role="img" aria-label="Przepływ: tekst i pliki są maskowane przez program na komputerze, do usługi AI trafiają zamienniki wykrytych danych, odpowiedź wraca i jest przywracana lokalnie. Mapa oryginałów zostaje na komputerze." font-family="'Source Sans 3',system-ui,sans-serif">
 <style>
 .canvas{fill:#0f1020;stroke:#2e3255;stroke-width:1}
 svg{display:block;max-width:100%;height:auto;font:14px "Source Sans 3",sans-serif;color:#e9eaf5}
@@ -27,7 +27,7 @@ text{fill:currentColor}
       <path class="edge" d="M392,83 L428,83" marker-end="url(#a1)"/>
       <g class="box mask"><rect x="428" y="56" width="130" height="54" rx="4"/></g><text class="t" x="440" y="79">zamienniki</text><text class="s" x="440" y="97">Barbara Zalewska,</text>
       <path class="edge brand" d="M558,83 L652,83" marker-end="url(#a2)"/><text class="lbl" x="566" y="74">sieć</text>
-      <g class="box"><rect x="652" y="56" width="216" height="54" rx="4"/></g><text class="t" x="664" y="79">model</text><text class="s" x="664" y="97">widzi tylko dane fikcyjne</text>
+      <g class="box"><rect x="652" y="56" width="216" height="54" rx="4"/></g><text class="t" x="664" y="79">model</text><text class="s" x="664" y="97">pracuje na zamiennikach</text>
       <path class="edge brand" d="M760,110 L760,140 L330,140 L330,110" marker-end="url(#a2)"/>
       <text class="lbl" x="500" y="156">odpowiedź z zamiennikami</text>
       <g class="box safe"><rect x="36" y="124" width="150" height="40" rx="4"/></g><text class="t" x="48" y="141">ekran</text><text class="s" x="48" y="156">oryginały przywrócone</text>

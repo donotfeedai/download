@@ -2,15 +2,15 @@
 
 [Polski](README.md) · **English**
 
-<img src="assets/social-preview.png" alt="Do Not Feed AI: client data stays on your computer. The extension replaces names, national IDs, bank accounts, phones and addresses with fictional data before your text or file reaches ChatGPT, Claude or Gemini.">
+<img src="assets/social-preview.png" alt="Do Not Feed AI: client data stays on your computer. The extension detects names, national IDs, bank accounts, phones and addresses and replaces them with fictional data before your text or file reaches ChatGPT, Claude, Gemini or Copilot.">
 
-Do Not Feed AI replaces names, national IDs, phone numbers, addresses and files with realistic fictional data
-**before they leave your computer**. The model's reply comes back with the real values restored. Everything is
+Do Not Feed AI detects names, national IDs, phone numbers, addresses and data in files, then replaces them with
+realistic fictional data **before the message leaves your computer**. The model's reply comes back with the real values restored. Everything is
 done by a program on your machine, with no connection to a vendor server - there is no such server.
 
 Do Not Feed AI is a **desktop program** (Windows, macOS) plus a **browser extension**, used together: the program
-detects and replaces the data, the extension hands it what you send to the chat. It works with a licence; the
-trial is a licence with a short expiry date, sent on request ([kontakt@donotfeedai.pl](mailto:kontakt@donotfeedai.pl)).
+detects and replaces the data, the extension hands it what you send to the chat. It works with a licence; a
+trial licence is sent on request ([kontakt@donotfeedai.pl](mailto:kontakt@donotfeedai.pl)).
 
 This repository is **distribution only**: the program installer and the browser extension. The source code is
 not published here. The software is proprietary, all rights reserved; the terms of use are set out in the licence
@@ -57,9 +57,9 @@ says so in the bar in the chat and asks before every send whether to send the me
 
 ## How it works
 
-<img src="assets/how-it-works.svg" width="928" alt="Flow: text and files are masked locally, the AI service receives replacements, and the reply is restored on your machine. Originals never cross the boundary of your computer.">
+<img src="assets/how-it-works.svg" width="928" alt="Flow: text and files are masked locally, the AI service receives replacements for the detected data, and the reply is restored on your machine. The map of originals stays on your computer.">
 
-*Original values never cross the boundary of your computer. The replacement map lives in the program, separately for each chat tab, and is deleted when the tab is closed.*
+*The AI receives replacements for the detected data, and the map of originals stays on your computer: it lives in the program, separately for each chat tab, and is deleted when the tab is closed.*
 
 - **Chat text**: you type as usual and the extension takes over the send - the program detects the data, the extension substitutes it in the box,
   sends the replacements, and restores the originals in the model's reply. What you see on screen is always real.
@@ -146,7 +146,7 @@ Short version (full steps: [INSTALL.en.md](INSTALL.en.md)):
 | who | on request, no commitment | per workstation, working with client data | per company, deployed without clicking |
 | text, files, technical data, reply restoration | yes | yes | yes |
 | custom phrases, manual restore mode | yes | yes | yes |
-| validity | short | per agreement | per agreement |
+| validity | set when we send it | per agreement | per agreement |
 | licence | one file per workstation | one file per workstation | one file per company, via MDM or policy |
 | shared company dictionary (clients, projects, products) | - | - | yes |
 

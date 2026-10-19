@@ -2,15 +2,15 @@
 
 **Polski** · [English](README.en.md)
 
-<img src="assets/social-preview.png" alt="Do Not Feed AI: dane klientów zostają na Twoim komputerze. Wtyczka podmienia imiona, PESEL, NIP, IBAN, telefony i adresy na dane fikcyjne, zanim tekst albo plik trafi do ChatGPT, Claude lub Gemini.">
+<img src="assets/social-preview.png" alt="Do Not Feed AI: dane klientów zostają na Twoim komputerze. Wtyczka wykrywa imiona, PESEL, NIP, IBAN, telefony i adresy i podmienia je na dane fikcyjne, zanim tekst albo plik trafi do ChatGPT, Claude, Gemini lub Copilota.">
 
-Do Not Feed AI podmienia imiona, PESEL-e, numery telefonów, adresy i pliki na realistyczne dane fikcyjne,
-**zanim opuszczą Twój komputer**. Odpowiedź modelu wraca już z prawdziwymi wartościami. Wszystko robi program
+Do Not Feed AI wykrywa imiona, PESEL-e, numery telefonów, adresy i dane w plikach, a potem podmienia je na
+realistyczne dane fikcyjne, **zanim wiadomość opuści Twój komputer**. Odpowiedź modelu wraca już z prawdziwymi wartościami. Wszystko robi program
 na Twoim komputerze, bez ani jednego połączenia z naszym serwerem, bo takiego serwera nie ma.
 
 Do Not Feed AI to **program na komputer** (Windows, macOS) i **wtyczka do przeglądarki**, potrzebne razem:
-program wykrywa i podmienia dane, wtyczka przekazuje mu to, co wysyłasz do czatu. Działa z licencją; okres próbny
-to licencja z krótką datą, wysyłana na prośbę ([kontakt@donotfeedai.pl](mailto:kontakt@donotfeedai.pl)).
+program wykrywa i podmienia dane, wtyczka przekazuje mu to, co wysyłasz do czatu. Działa z licencją; licencję próbną
+wysyłamy na prośbę ([kontakt@donotfeedai.pl](mailto:kontakt@donotfeedai.pl)).
 
 To repozytorium służy **tylko do dystrybucji**: instalator programu i wtyczka do przeglądarki.
 Kod źródłowy nie jest tu publikowany. Oprogramowanie jest własnościowe, wszelkie prawa zastrzeżone;
@@ -57,9 +57,9 @@ i przed każdym wysłaniem pyta, czy wysłać wiadomość bez maskowania.
 
 ## Jak to działa
 
-<img src="assets/jak-to-dziala.svg" width="928" alt="Przepływ: tekst i pliki są maskowane lokalnie, do usługi AI trafiają zamienniki, odpowiedź wraca i jest przywracana na komputerze. Oryginały nigdy nie przekraczają granicy komputera.">
+<img src="assets/jak-to-dziala.svg" width="928" alt="Przepływ: tekst i pliki są maskowane lokalnie, do usługi AI trafiają zamienniki wykrytych danych, odpowiedź wraca i jest przywracana na komputerze. Mapa oryginałów zostaje na komputerze.">
 
-*Oryginalne wartości nigdy nie przekraczają granicy komputera. Mapa zamienników jest w programie, osobno dla każdej karty czatu, i znika z jej zamknięciem.*
+*Do AI trafiają zamienniki wykrytych danych, a mapa oryginałów zostaje na Twoim komputerze: w programie, osobno dla każdej karty czatu, i znika z jej zamknięciem.*
 
 - **Tekst w czacie**: piszesz normalnie, a wysyłkę przejmuje wtyczka - program wykrywa dane, wtyczka podmienia je w polu, wysyła zamienniki,
   a w odpowiedzi modelu przywraca oryginały. Z ekranu nie znikasz: dane, które widzisz, są prawdziwe.
@@ -145,7 +145,7 @@ Skrót (pełna wersja: [INSTALACJA.md](INSTALACJA.md)):
 | kto | na prośbę, bez zobowiązań | na stanowisko, praca na danych klientów | na firmę, wdrożenie bez klikania |
 | tekst, pliki, dane techniczne, przywracanie odpowiedzi | tak | tak | tak |
 | własne frazy, tryb ręczny | tak | tak | tak |
-| ważność | krótka | według umowy | według umowy |
+| ważność | ustalana przy wysyłce | według umowy | według umowy |
 | licencja | plik na stanowisko | plik na stanowisko | jeden plik na firmę, przez MDM lub politykę |
 | wspólny słownik firmowy (klienci, projekty, produkty) | - | - | tak |
 

@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="-14 -14 928 218" width="928" height="218" role="img" aria-label="Flow: text and files are masked in the browser or by the companion on your machine, the AI service receives replacements, the reply comes back and is restored locally. Originals never cross the boundary of your computer." font-family="'Source Sans 3',system-ui,sans-serif">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-14 -14 928 218" width="928" height="218" role="img" aria-label="Flow: text and files are masked in the browser or by the companion on your machine, the AI service receives replacements for the detected data, the reply comes back and is restored locally. The map of originals stays on your computer." font-family="'Source Sans 3',system-ui,sans-serif">
 <style>
 .canvas{fill:#0f1020;stroke:#2e3255;stroke-width:1}
 svg{display:block;max-width:100%;height:auto;font:14px "Source Sans 3",sans-serif;color:#e9eaf5}
@@ -27,7 +27,7 @@ text{fill:currentColor}
       <path class="edge" d="M392,83 L428,83" marker-end="url(#a1)"/>
       <g class="box mask"><rect x="428" y="56" width="130" height="54" rx="4"/></g><text class="t" x="440" y="79">replacements</text><text class="s" x="440" y="97">Barbara Zalewska,</text>
       <path class="edge brand" d="M558,83 L652,83" marker-end="url(#a2)"/><text class="lbl" x="566" y="74">network</text>
-      <g class="box"><rect x="652" y="56" width="216" height="54" rx="4"/></g><text class="t" x="664" y="79">model</text><text class="s" x="664" y="97">sees fictional data only</text>
+      <g class="box"><rect x="652" y="56" width="216" height="54" rx="4"/></g><text class="t" x="664" y="79">model</text><text class="s" x="664" y="97">works on replacements</text>
       <path class="edge brand" d="M760,110 L760,140 L330,140 L330,110" marker-end="url(#a2)"/>
       <text class="lbl" x="500" y="156">reply with replacements</text>
       <g class="box safe"><rect x="36" y="124" width="150" height="40" rx="4"/></g><text class="t" x="48" y="141">screen</text><text class="s" x="48" y="156">originals restored</text>
