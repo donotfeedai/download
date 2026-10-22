@@ -6,7 +6,7 @@
 
 Do Not Feed AI detects names, national IDs, phone numbers, addresses and data in files, then replaces them with
 realistic fictional data **before the message leaves your computer**. The model's reply comes back with the real values restored. Everything is
-done by a program on your machine, with no connection to a vendor server - there is no such server.
+done by a program on your machine. Do Not Feed AI works locally: it does not send data to the vendor, collect statistics or track user activity, and it needs no account and no server connection to verify the licence.
 
 Do Not Feed AI is a **desktop program** (Windows, macOS) plus a **browser extension**, used together: the program
 detects and replaces the data, the extension hands it what you send to the chat. It works with a licence; a
@@ -32,8 +32,7 @@ Windows: Chrome, Edge, Firefox · macOS: Chrome, Firefox</p>
 
 <p><b>Systems:</b>
 <img src="assets/os/apple.svg" width="20" alt="macOS"> macOS &nbsp;
-<img src="assets/os/windows.svg" width="20" alt="Windows"> Windows &nbsp;
-<img src="assets/os/tux.svg" width="20" alt="Linux"> Linux <code>in preparation</code></p>
+<img src="assets/os/windows.svg" width="20" alt="Windows"> Windows</p>
 
 Website: [donotfeedai.com](https://donotfeedai.com) · Privacy policy: [donotfeedai.com/polityka-prywatnosci.html](https://donotfeedai.com/polityka-prywatnosci.html) (Polish)
 
@@ -103,7 +102,7 @@ file unchanged.
 
 ## Privacy and security
 
-- **There is no vendor server.** No telemetry, no usage statistics, no user accounts, no online licence checks.
+- **It works locally.** It does not send data to the vendor, collect statistics or track user activity. No telemetry, no user accounts, no online licence checks.
   Detection and replacement happen on your device.
 - **The only network traffic** is the optional “check for updates”: after you click it, the extension fetches one
   static file, with no parameters, no version number and no identifiers - the comparison happens locally.
@@ -137,7 +136,6 @@ Short version (full steps: [INSTALL.en.md](INSTALL.en.md)):
 |---|---|---|
 | macOS | Chrome: load unpacked (Edge on macOS is not supported); Firefox: signed `.xpi` | `donotfeedai-macos.pkg` |
 | Windows | in the installer (Chrome, Edge: load unpacked); Firefox: signed `.xpi` | `donotfeedai-windows-setup.exe` (code-signed) |
-| Linux | in preparation | in preparation |
 
 ## Tiers
 
@@ -159,7 +157,7 @@ Checksums ship with every release (`SHA256SUMS.txt`) and are also printed in the
 In the folder with the downloaded files:
 
 ```
-shasum -a 256 -c SHA256SUMS.txt        # macOS, Linux
+shasum -a 256 -c SHA256SUMS.txt        # macOS
 Get-FileHash .\donotfeedai-windows-setup.exe     # Windows (PowerShell), one file at a time
 ```
 

@@ -1,4 +1,4 @@
-Do Not Feed AI — licencja własnościowa (proprietary licence)
+Do Not Feed AI - licencja własnościowa (proprietary licence)
 Copyright (C) 2026 Sebastian Obara It&Consulting
 Wszelkie prawa zastrzeżone. / All rights reserved.
 
@@ -10,7 +10,7 @@ umowa licencyjna (OWU) oraz Plik Licencji wydany przez Wydawcę; ten plik ich ni
 --------------------------------------------------------------------------------
 1. Oprogramowanie
 --------------------------------------------------------------------------------
-Oprogramowaniem są: wtyczka do przeglądarki Do Not Feed AI, program towarzyszący (companion) oraz narzędzie
+Oprogramowaniem są: wtyczka do przeglądarki Do Not Feed AI, program Do Not Feed AI instalowany na komputerze oraz narzędzie
 wiersza poleceń `dnf`, wraz z aktualizacjami, udostępniane w wydaniach tego repozytorium
 (pliki `.pkg`, `.exe`, `.zip`).
 
@@ -31,8 +31,8 @@ w sposób zmieniający ich sens (na przykład przypisywanie nam funkcji, któryc
 
 3. Znaki i materiały osób trzecich
 --------------------------------------------------------------------------------
-Nazwy i znaki firm trzecich — przeglądarek (Chrome, Edge, Brave, Firefox, Chromium), usług AI (ChatGPT,
-Claude, Gemini, Copilot) oraz systemów (macOS, Windows, Linux) — należą do ich właścicieli. W tym repozytorium
+Nazwy i znaki firm trzecich - przeglądarek (Chrome, Edge, Brave, Firefox, Chromium), usług AI (ChatGPT,
+Claude, Gemini, Copilot) oraz systemów (macOS, Windows, Linux) - należą do ich właścicieli. W tym repozytorium
 są użyte wyłącznie informacyjnie, żeby wskazać, z czym Oprogramowanie współpracuje. Użycie tych znaków nie
 oznacza powiązania z ich właścicielami ani poparcia z ich strony.
 
@@ -48,14 +48,14 @@ a decyzja o tym, jakie dane mogą trafić do usługi AI, należy do użytkownika
 Wydawca: Sebastian Obara It&Consulting. Kontakt w sprawach licencji i OWU: kontakt@donotfeedai.pl.
 
 OWU wraz z załącznikami przekazywany jest wraz z licencją. W razie jakiejkolwiek sprzeczności między tym
-plikiem a OWU rozstrzyga OWU, a w razie wątpliwości — polska wersja językowa tego pliku.
+plikiem a OWU rozstrzyga OWU, a w razie wątpliwości - polska wersja językowa tego pliku.
 
 --------------------------------------------------------------------------------
-Summary (English, for reference only — the Polish text above and the OWU prevail)
+Summary (English, for reference only - the Polish text above and the OWU prevail)
 --------------------------------------------------------------------------------
 Do Not Feed AI is proprietary software; all rights reserved. Using it requires a licence from the vendor and
 is governed by the vendor's licence agreement (OWU) and the Licence File. This file is not an open source
-licence, and it covers the software only. You are welcome to write and talk about the product — reviews,
+licence, and it covers the software only. You are welcome to write and talk about the product - reviews,
 articles, videos, presentations and customer materials may use the Do Not Feed AI name, logo, screenshots and
 excerpts from the description and instructions, free of charge; just do not present them as your own or change
 their meaning. Third-party marks (browsers, AI services, operating systems) belong to their owners and are

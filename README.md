@@ -6,7 +6,7 @@
 
 Do Not Feed AI wykrywa imiona, PESEL-e, numery telefonów, adresy i dane w plikach, a potem podmienia je na
 realistyczne dane fikcyjne, **zanim wiadomość opuści Twój komputer**. Odpowiedź modelu wraca już z prawdziwymi wartościami. Wszystko robi program
-na Twoim komputerze, bez ani jednego połączenia z naszym serwerem, bo takiego serwera nie ma.
+na Twoim komputerze. Do Not Feed AI działa lokalnie: nie przesyła danych do producenta, nie zbiera statystyk ani nie śledzi aktywności użytkowników i nie wymaga konta ani połączenia z serwerem w celu weryfikacji licencji.
 
 Do Not Feed AI to **program na komputer** (Windows, macOS) i **wtyczka do przeglądarki**, potrzebne razem:
 program wykrywa i podmienia dane, wtyczka przekazuje mu to, co wysyłasz do czatu. Działa z licencją; licencję próbną
@@ -32,8 +32,7 @@ Windows: Chrome, Edge, Firefox · macOS: Chrome, Firefox</p>
 
 <p><b>Systemy:</b>
 <img src="assets/os/apple.svg" width="20" alt="macOS"> macOS &nbsp;
-<img src="assets/os/windows.svg" width="20" alt="Windows"> Windows &nbsp;
-<img src="assets/os/tux.svg" width="20" alt="Linux"> Linux <code>w przygotowaniu</code></p>
+<img src="assets/os/windows.svg" width="20" alt="Windows"> Windows</p>
 
 Strona: [donotfeedai.com](https://donotfeedai.com) · Polityka prywatności: [donotfeedai.com/polityka-prywatnosci.html](https://donotfeedai.com/polityka-prywatnosci.html)
 
@@ -102,8 +101,9 @@ Z włączonym podglądem zobaczysz listę wykrytych wartości z licznikami - odz
 
 ## Prywatność i bezpieczeństwo
 
-- **Nie ma serwera producenta.** Żadnej telemetrii, statystyk użycia, kont użytkowników ani sprawdzania
-  licencji online. Wykrywanie i podmiana danych odbywają się na Twoim urządzeniu.
+- **Działa lokalnie.** Nie przesyła danych do producenta, nie zbiera statystyk ani nie śledzi aktywności
+  użytkowników. Żadnej telemetrii, kont użytkowników ani sprawdzania licencji online. Wykrywanie i podmiana
+  danych odbywają się na Twoim urządzeniu.
 - **Jedyny ruch sieciowy** to opcjonalne „sprawdź aktualizacje”: po kliknięciu wtyczka pobiera jeden statyczny
   plik, bez parametrów, bez numeru wersji i bez identyfikatorów - porównanie wersji robi lokalnie.
   Żadnych żądań sieciowych w tle ani cyklicznie.
@@ -136,7 +136,6 @@ Skrót (pełna wersja: [INSTALACJA.md](INSTALACJA.md)):
 |---|---|---|
 | macOS | Chrome: load unpacked (Edge na macOS nie jest obsługiwany); Firefox: podpisany `.xpi` | `donotfeedai-macos.pkg` |
 | Windows | w instalatorze (Chrome, Edge: load unpacked); Firefox: podpisany `.xpi` | `donotfeedai-windows-setup.exe` (podpisany cyfrowo) |
-| Linux | w przygotowaniu | w przygotowaniu |
 
 ## Poziomy
 
@@ -158,7 +157,7 @@ Sumy kontrolne są w każdym wydaniu (`SHA256SUMS.txt`), a te same wartości są
 W rozpakowanym katalogu z pobranymi plikami:
 
 ```
-shasum -a 256 -c SHA256SUMS.txt        # macOS, Linux
+shasum -a 256 -c SHA256SUMS.txt        # macOS
 Get-FileHash .\donotfeedai-windows-setup.exe     # Windows (PowerShell), pojedynczo
 ```
 

@@ -122,8 +122,8 @@ sudo /Applications/donotfeedai/uninstall.sh            # binarki, ikona w pasku 
 sudo /Applications/donotfeedai/uninstall.sh --purge    # dodatkowo licencja i kopie map kart (pyta o zgodę)
 ```
 
-**Windows**: **Ustawienia → Aplikacje → Zainstalowane aplikacje** → *Do Not Feed AI companion* → **Odinstaluj**
-(usuwa program i rejestrację w przeglądarkach). Licencja zostaje; żeby usunąć i ją, skasuj folder
+**Windows**: **Ustawienia → Aplikacje → Zainstalowane aplikacje** → *Do Not Feed AI* → **Odinstaluj**
+(usuwa program i rejestrację w przeglądarkach; w starszych wersjach nazwa pozycji ma dopisek na końcu). Licencja zostaje; żeby usunąć i ją, skasuj folder
 `%LOCALAPPDATA%\donotfeedai`, a w **Menedżerze poświadczeń → Poświadczenia systemu Windows** wpisy z „donotfeedai".
 
 Wtyczkę usuwa się osobno w `chrome://extensions` (Firefox: `about:addons` → Do Not Feed AI → **Usuń**).

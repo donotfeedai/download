@@ -121,8 +121,8 @@ sudo /Applications/donotfeedai/uninstall.sh            # binaries, menu bar icon
 sudo /Applications/donotfeedai/uninstall.sh --purge    # also licence and tab map copies (asks for confirmation)
 ```
 
-**Windows**: **Settings → Apps → Installed apps** → *Do Not Feed AI companion* → **Uninstall** (removes the program
-and the browser registration). The licence stays; to remove it too, delete the `%LOCALAPPDATA%\donotfeedai`
+**Windows**: **Settings → Apps → Installed apps** → *Do Not Feed AI* → **Uninstall**
+(removes the program and the browser registration; in older versions the entry name has a suffix). The licence stays; to remove it too, delete the `%LOCALAPPDATA%\donotfeedai`
 folder and, in **Credential Manager → Windows Credentials**, the entries containing "donotfeedai".
 
 The extension is removed separately in `chrome://extensions` (Firefox: `about:addons` → Do Not Feed AI → **Remove**).
