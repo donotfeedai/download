@@ -10,7 +10,7 @@ done by a program on your machine. Do Not Feed AI works locally: it does not sen
 
 Do Not Feed AI is a **desktop program** (Windows, macOS) plus a **browser extension**, used together: the program
 detects and replaces the data, the extension hands it what you send to the chat. It works with a licence; a
-trial licence is sent on request ([kontakt@donotfeedai.pl](mailto:kontakt@donotfeedai.pl)).
+trial licence is sent on request ([contact@donotfeedai.com](mailto:contact@donotfeedai.com)).
 
 This repository is **distribution only**: the program installer and the browser extension. The source code is
 not published here. The software is proprietary, all rights reserved; the terms of use are set out in the licence
