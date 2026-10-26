@@ -46,6 +46,7 @@ Wszystkie wydania (z numerami wersji i opisem zmian):
 |---|---|
 | **[donotfeedai-macos.pkg](https://github.com/donotfeedai/download/releases/latest/download/donotfeedai-macos.pkg)** | **macOS** - program: instalator podpisany i notaryzowany, Gatekeeper nie będzie ostrzegał |
 | **[donotfeedai-windows-setup.exe](https://github.com/donotfeedai/download/releases/latest/download/donotfeedai-windows-setup.exe)** | **Windows 10/11** - program i wtyczka: instalator na koncie użytkownika, bez uprawnień administratora. Podpisany cyfrowo (certyfikat wydany przez Microsoft), wydawca: Sebastian Obara It&Consulting |
+| **[donotfeedai-windows.msi](https://github.com/donotfeedai/download/releases/latest/download/donotfeedai-windows.msi)** | **Windows 10/11, dla działów IT** - ten sam program i wtyczka co w instalatorze, do wdrożeń przez zasady grupy, Intune i SCCM (instalacja na komputer lub na użytkownika); szczegóły w [INSTALACJA.md](INSTALACJA.md#windows). Podpisany cyfrowo |
 | **[donotfeedai-wtyczka-chrome.zip](https://github.com/donotfeedai/download/releases/latest/download/donotfeedai-wtyczka-chrome.zip)** | **Chrome** (macOS) - wtyczka do załadowania jako rozpakowana; na Windows wtyczka do Chrome i Edge jest w instalatorze |
 | **[donotfeedai-wtyczka-firefox.xpi](https://donotfeedai.com/pobierz/donotfeedai-wtyczka-firefox.xpi)** | **Firefox** - wtyczka podpisana przez Mozillę: otwórz link w Firefoksie i kliknij **Dodaj**, zostaje na stałe ([ten sam plik na GitHubie](https://github.com/donotfeedai/download/releases/latest/download/donotfeedai-wtyczka-firefox.xpi)) |
 | [donotfeedai-wtyczka-firefox.zip](https://github.com/donotfeedai/download/releases/latest/download/donotfeedai-wtyczka-firefox.zip) | Firefox - ta sama wtyczka bez podpisu, do testów jako dodatek tymczasowy |
@@ -62,21 +63,32 @@ i przed każdym wysłaniem pyta, czy wysłać wiadomość bez maskowania.
 
 - **Tekst w czacie**: piszesz normalnie, a wysyłkę przejmuje wtyczka - program wykrywa dane, wtyczka podmienia je w polu, wysyła zamienniki,
   a w odpowiedzi modelu przywraca oryginały. Z ekranu nie znikasz: dane, które widzisz, są prawdziwe.
-- **Plik**: dodajesz xlsx, docx, csv albo txt jak zwykle. Wtyczka zatrzymuje wysyłkę, program maskuje plik na
-  Twoim komputerze i do czatu trafia wersja `plik_anon.xlsx`. Formuły, style i formatowanie zostają nietknięte.
+- **Plik**: dodajesz xlsx, docx, csv albo txt jak zwykle. Wtyczka zatrzymuje wysyłkę, program maskuje dane w treści
+  pliku na Twoim komputerze i do czatu trafia wersja `plik_anon.xlsx`. Z plików Excel i Word jest to uproszczona kopia
+  z samymi wartościami i tekstem: wyniki formuł zamiast formuł, bez formatowania, wykresów, obrazów i makr.
+  Oryginał zostaje u Ciebie bez zmian.
 - **Sekrety i konfiguracje**: hasła, tokeny i klucze podmienia program, także w plikach `.env`,
   `docker-compose.yml` i logach.
+- **Schowek (poza przeglądarką, Pro i Business)**: w edytorze, terminalu albo dowolnym programie kopiujesz tekst i naciskasz
+  skrót **Anonimizuj** (Windows `Ctrl+Win+A`, macOS `Ctrl+Option+A`): w schowku zostaje tekst z zamiennikami, który wklejasz do AI.
+  Odpowiedź kopiujesz i naciskasz **Przywróć** (`Ctrl+Win+R`, `Ctrl+Option+R`). Skróty są domyślnie wyłączone: włączasz je w menu
+  ikony programu. To nie jest wtyczka w edytorze: program czyta schowek tylko po naciśnięciu skrótu (albo wybraniu polecenia w menu).
+  Historia schowka systemu i menedżery schowka mogą zachować oryginał skopiowany przed użyciem skrótu.
+- **Plik z menu programu (Pro i Business)**: „Zanonimizuj plik…” i „Przywróć plik…” w menu ikony programu (pasek menu na macOS,
+  zasobnik na Windows). Obok oryginału powstaje plik z neutralną nazwą i końcówką `_anon`; mapa oryginałów leży zaszyfrowana na
+  Twoim komputerze i po 30 dniach jest usuwana. PDF z warstwą tekstową zamieniamy na docx albo txt (bez układu strony i grafiki);
+  z obrazów jpg i png usuwamy tylko metadane (treść obrazu nie jest maskowana).
 
 ## Co wykrywa
 
 | dana | jak |
 |---|---|
-| imię i nazwisko | także w przypadkach zależnych: „dla Magdaleny”, „do Kowalskiego”; zamiennik wraca w tym samym przypadku |
+| imię i nazwisko | także w przypadkach zależnych: „dla Magdaleny”, „do Kowalskiego”; zamiennik wraca w tym samym przypadku; także zapisane WIELKIMI literami: „JAN KOWALSKI” |
 | PESEL | suma kontrolna albo wiarygodna data urodzenia |
 | NIP, REGON, IBAN, nr dowodu | z walidacją sum kontrolnych, więc numer zamówienia nie jest NIP-em |
 | telefon i e-mail | e-mail we wzorcu osoby: `s.obara@` → `s.zalewski@`; numery 9-cyfrowe, z `+48`, myślnikami i spacjami |
 | adres, kod i miasto | „ul. Długa 7” obok innych danych osobowych |
-| firma | Sp. z o.o., S.A., Sp. j., Ltd., GmbH |
+| firma | Sp. z o.o., S.A., Sp. j., Ltd., GmbH, także wielkimi literami |
 | własne frazy | nazwy projektów, klientów, produktów; w Business także słownik firmowy w pliku licencji |
 | dane techniczne | sekrety, hasła, klucze i tokeny dostawców, hosty, adresy IP, loginy, adresy MAC |
 | kolumny w arkuszach | nagłówek „Nazwisko” czy „PESEL” ustala typ całej kolumny |
@@ -88,16 +100,21 @@ Dwa tryby do wyboru: **dane fikcyjne** (domyślnie - tekst czyta się jak zwykł
 
 ## Pliki
 
-| format | co zostaje zachowane |
+| format | co trafia do czatu |
 |---|---|
-| XLSX | arkusze Excel, formuły |
-| DOCX | akapity, tabele, nagłówki i stopki |
+| XLSX | arkusze Excel: wartości komórek (wyniki formuł zamiast formuł), bez formatowania |
+| DOCX | akapity, tabele, nagłówki i stopki: sam tekst, bez formatowania |
 | CSV | separator: średnik, przecinek albo tabulator |
 | TXT | txt, md, log |
 | konfiguracje i logi | env, yaml, json, toml, ini, conf, properties, tf, sh, ps1, xml, sql, pem, key, Dockerfile, kubeconfig |
-| PDF, obrazy | blokowane domyślnie - nic nie prześlizgnie się obok |
+| PDF, obrazy | w czacie blokowane domyślnie - nic nie prześlizgnie się obok; z menu programu: patrz niżej |
 
 Z włączonym podglądem zobaczysz listę wykrytych wartości z licznikami - odznaczone zostają w pliku bez zmian.
+
+**Z menu programu** (Pro i Business; macOS: pasek menu, Windows: aplikacja w zasobniku): txt, csv, xlsx i docx jak w czacie, a ponadto
+**PDF z warstwą tekstową** (wynik: docx albo txt, bez układu strony, obrazów, hiperłączy i podpisów; skany bez tekstu są odrzucane)
+oraz **obrazy jpg i png** (usuwamy tylko metadane: lokalizację, urządzenie, autora; treść obrazu, np. tekst na zdjęciu, nie jest
+maskowana). Wykrywanie działa na regułach, więc sprawdź wynik przed wysłaniem do AI.
 
 ## Prywatność i bezpieczeństwo
 
@@ -112,7 +129,12 @@ Z włączonym podglądem zobaczysz listę wykrytych wartości z licznikami - odz
   połączenia program trzyma zaszyfrowaną kopię mapy otwartej karty (XChaCha20-Poly1305, klucz w Keychain na macOS
   albo w Credential Manager na Windows), bez haseł i kluczy API; kopia znika z zamknięciem karty, przy ponownym
   uruchomieniu przeglądarki i najpóźniej po 24 godzinach. Karty incognito nigdy nie trafiają na dysk.
-- **Program nie zapisuje kopii roboczych plików** - przetwarza je w pamięci.
+- **Program nie zapisuje kopii roboczych plików z czatu** - przetwarza je w pamięci. Plik z menu programu powstaje obok oryginału, a jego
+  mapa oryginałów jest zaszyfrowana kluczem systemu (Keychain, Credential Manager) i znika po 30 dniach. Mapa schowka jest tylko
+  w pamięci programu i znika po „Nowej sesji”, po 24 godzinach bezczynności i po zamknięciu programu.
+- **Dziennik audytu**: program zapisuje na Twoim komputerze lokalny dziennik zdarzeń technicznych (liczby i kody, bez wiadomości,
+  wykrytych wartości, nazw osób i firm, fraz własnych ani nazw plików), zabezpieczony przed niezauważoną zmianą, przechowywany
+  180 dni i nigdzie nie jest wysyłany. Działa przy każdej licencji.
 - **Licencja** to podpisany plik sprawdzany lokalnie przez program; nic nie jest wysyłane.
 - Wtyczka ma uprawnienia tylko do pamięci lokalnej, komunikacji z programem i stron czatów, na których działa.
 
@@ -135,7 +157,7 @@ Skrót (pełna wersja: [INSTALACJA.md](INSTALACJA.md)):
 | system | wtyczka | program |
 |---|---|---|
 | macOS | Chrome: load unpacked (Edge na macOS nie jest obsługiwany); Firefox: podpisany `.xpi` | `donotfeedai-macos.pkg` |
-| Windows | w instalatorze (Chrome, Edge: load unpacked); Firefox: podpisany `.xpi` | `donotfeedai-windows-setup.exe` (podpisany cyfrowo) |
+| Windows | w instalatorze (Chrome, Edge: load unpacked); Firefox: podpisany `.xpi` | `donotfeedai-windows-setup.exe` (podpisany cyfrowo) albo, dla działów IT, `donotfeedai-windows.msi` |
 
 ## Poziomy
 
@@ -143,6 +165,8 @@ Skrót (pełna wersja: [INSTALACJA.md](INSTALACJA.md)):
 |---|---|---|---|
 | kto | na prośbę, bez zobowiązań | na stanowisko, praca na danych klientów | na firmę, wdrożenie bez klikania |
 | tekst, pliki, dane techniczne, przywracanie odpowiedzi | tak | tak | tak |
+| skróty schowka i pliki z menu programu (także PDF i obrazy) | tak | tak | tak |
+| dziennik audytu (lokalny, bez treści, 180 dni) | tak | tak | tak |
 | własne frazy, tryb ręczny | tak | tak | tak |
 | ważność | ustalana przy wysyłce | według umowy | według umowy |
 | licencja | plik na stanowisko | plik na stanowisko | jeden plik na firmę, przez MDM lub politykę |
@@ -189,7 +213,14 @@ Get-AuthenticodeSignature .\donotfeedai-windows-setup.exe | Format-List Status, 
 
 **Czy muszę instalować program?**
 Tak. Wykrywanie, zamienniki, przywracanie odpowiedzi i licencja są w programie, a wtyczka tylko przekazuje mu
-tekst i pliki. Bez programu wtyczka nie maskuje danych. Program nie ma okna; działa, gdy przeglądarka jest otwarta.
+tekst i pliki. Bez programu wtyczka nie maskuje danych. Część programu współpracująca z przeglądarką nie ma okna i działa, gdy
+przeglądarka jest otwarta; skróty schowka i pliki z menu obsługuje osobna aplikacja (macOS: ikona w pasku menu, Windows: ikona
+w zasobniku, uruchamiana ze skrótu w menu Start, bez autostartu, dopóki sam go nie włączysz).
+
+**Czy działa w edytorze kodu albo terminalu?**
+Wtyczka nie, ale program tak, przez skróty schowka (Pro i Business, domyślnie wyłączone, patrz „Jak to działa”): kopiujesz tekst,
+skrót zamienia schowek na tekst z zamiennikami, wklejasz do AI, a odpowiedź przywracasz drugim skrótem. Asystentów w edytorze
+i wywołań API nie obsługujemy.
 
 **Co z danymi, których wtyczka nie wykryje?**
 Nazwy projektów, klientów czy produktów dodajesz jako własne frazy. Podgląd przed wysłaniem pokazuje listę

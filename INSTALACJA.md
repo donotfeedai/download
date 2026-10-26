@@ -77,6 +77,32 @@ behavior: User*). Log instalacji trafia do `%TEMP%\Setup Log *.txt`. Domyślny f
 `%LOCALAPPDATA%\Programs\donotfeedai`; inny można podać parametrem `/DIR="D:\Programy\donotfeedai"` (instalator nie
 pyta o folder w oknie, a instrukcja dla użytkowników zakłada folder domyślny).
 
+**Instalator MSI dla działów IT** (`donotfeedai-windows.msi`, Windows 10 i 11): do wdrożeń przez zasady grupy (GPO), Intune albo
+SCCM. Zawartość ta sama co w zwykłym instalatorze: program, rozpakowana wtyczka (`wtyczka-chrome`, `wtyczka-firefox`),
+aplikacja w zasobniku i rejestracja programu w Chrome, Edge i Firefoksie. Instalator nie ustawia autostartu aplikacji i jej
+nie uruchamia (skrót „Do Not Feed AI” jest w menu Start). Domyślnie instaluje na użytkownika, bez uprawnień administratora; dla
+wdrożeń centralnych (kontekst SYSTEM) użyj instalacji na komputer:
+
+```
+msiexec /i donotfeedai-windows.msi /qn INSTALLSCOPE=perMachine /l*v "%ProgramData%\donotfeedai-msi.log"
+```
+
+Parametry (wielkimi literami): `INSTALLSCOPE=perUser|perMachine`, `AUTOSTART=1|0` (autostart aplikacji, domyślnie 0),
+`INSTALLAGENT=1|0` (0 pomija aplikację w zasobniku), `MIGRATEINNO=1|0` (przed instalacją odinstaluj wersję z Inno Setup tego
+użytkownika), `INSTALLDIR`, `UILANG=PL|EN`. Odinstalowanie: `msiexec /x donotfeedai-windows.msi /qn`. GPO nie przekazuje
+parametrów, więc potrzebna jest transformacja `.mst`. Wtyczkę w zarządzanych przeglądarkach rozłóż zasadą przeglądarki (Chrome:
+`ExtensionInstallForcelist` z identyfikatorem sklepu `mblhgffmdbgeiiolnghfeojabjlmmkmc`), a plik licencji rozłóż osobno na
+stanowiskach (program czyta `%LOCALAPPDATA%\donotfeedai\donotfeedai.lic`).
+
+## Skróty schowka, pliki z menu i aplikacja w zasobniku
+
+Poza przeglądarką program ma dwie funkcje dla licencji Pro i Business: **skróty schowka** (Anonimizuj i Przywróć) oraz **pliki z menu**
+(„Zanonimizuj plik…” i „Przywróć plik…”). Windows: aplikacja w zasobniku, którą uruchamiasz ze skrótu „Do Not Feed AI” w menu Start
+(nie startuje sama; autostart włączasz w jej menu). macOS: ikona w pasku menu. Skróty schowka są **domyślnie wyłączone**: włączasz je
+w menu ikony. Windows: `Ctrl+Win+A` (Anonimizuj) i `Ctrl+Win+R` (Przywróć); macOS: `Ctrl+Option+A` i `Ctrl+Option+R`. Te same
+polecenia są w menu ikony i działają także przy wyłączonych skrótach. Historia schowka systemu (Win+V) i menedżery schowka mogą
+zachować oryginał skopiowany przed użyciem skrótu: wyłącz je na czas pracy z danymi klientów.
+
 ## Gdy programu nie ma albo nie odpowiada
 
 Wtyczka nie ma własnego silnika, więc bez programu nie maskuje danych i mówi to wprost:
@@ -95,7 +121,7 @@ program jeszcze raz.
 
 **Program**: pobierz nowy instalator z najnowszego wydania (`donotfeedai-macos.pkg` albo
 `donotfeedai-windows-setup.exe`) i zainstaluj - nadpisuje poprzednią wersję (licencja zostaje w katalogu danych
-użytkownika). Program i wtyczkę aktualizuj razem: wtyczka nie współpracuje ze starszym programem.
+użytkownika). Po aktualizacji przy otwartej przeglądarce program sam kończy stare połączenie, więc ochrona od razu działa na nowej wersji. Program i wtyczkę najlepiej aktualizować razem. Wtyczka 0.3.43 działa z programem od wersji 0.3.32, ale funkcje z programu 0.4.0 (pliki z menu, skróty schowka, dziennik audytu) wymagają nowego programu.
 
 **Wtyczka** (załadowana jako rozpakowana) nie aktualizuje się sama. Nowa wersja to podmiana plików:
 
