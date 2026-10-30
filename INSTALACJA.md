@@ -19,9 +19,9 @@ obsługiwany.
    powinien się przyczepić. Jeśli się przyczepi, sprawdź podpis: `pkgutil --check-signature donotfeedai-macos.pkg`.
 
 2. **Wtyczka**:
-   - Firefox: otwórz w Firefoksie [donotfeedai.com/pobierz/donotfeedai-wtyczka-firefox.xpi](https://donotfeedai.com/pobierz/donotfeedai-wtyczka-firefox.xpi), kliknij
-     **Kontynuuj instalację** i **Dodaj**. Wtyczka jest podpisana przez Mozillę i zostaje na stałe, bez trybu
-     dewelopera. Ten sam plik jest w wydaniu jako `donotfeedai-wtyczka-firefox.xpi`.
+   - Firefox: otwórz w Firefoksie [addons.mozilla.org/firefox/addon/donotfeedai](https://addons.mozilla.org/firefox/addon/donotfeedai/), kliknij **Dodaj do Firefoksa**, a potem **Dodaj**.
+     Wtyczka jest w sklepie Mozilli, zostaje na stałe, bez trybu dewelopera, i aktualizuje się sama.
+     Plik [`donotfeedai-wtyczka-firefox.xpi`](https://donotfeedai.com/pobierz/donotfeedai-wtyczka-firefox.xpi) jest tylko do instalacji ręcznej lub wdrożeń.
    - Chrome (Edge na macOS nie jest obsługiwany): rozpakuj `donotfeedai-wtyczka-chrome.zip` w stałym miejscu
      (np. `~/Documents`), potem `chrome://extensions` → **Tryb dewelopera** → **Załaduj rozpakowane** →
      wskaż folder `donotfeedai-wtyczka-chrome-<wersja>` (ten z `manifest.json` w środku).
@@ -56,8 +56,8 @@ Windows 10 i 11 (x64), także Windows 11 na ARM.
    W `edge://extensions` (Chrome: `chrome://extensions`) włącz **Tryb dewelopera** (w Edge przełącznik na dole
    lewego panelu), kliknij **Załaduj rozpakowane**, w okienku wyboru folderu wklej powyższą ścieżkę w pasek adresu,
    naciśnij Enter i kliknij **Wybierz folder**. Firefox: otwórz
-   [donotfeedai.com/pobierz/donotfeedai-wtyczka-firefox.xpi](https://donotfeedai.com/pobierz/donotfeedai-wtyczka-firefox.xpi) i kliknij **Kontynuuj instalację** → **Dodaj**
-   (wtyczka podpisana przez Mozillę, zostaje na stałe).
+   [addons.mozilla.org/firefox/addon/donotfeedai](https://addons.mozilla.org/firefox/addon/donotfeedai/), kliknij **Dodaj do Firefoksa** → **Dodaj**
+   (wtyczka ze sklepu Mozilli, zostaje na stałe i aktualizuje się sama).
    Restart przeglądarki nie jest potrzebny.
 
 3. **Sprawdź**: kliknij ikonę puzzla, przypnij Do Not Feed AI i kliknij ikonę - panel ma pokazać

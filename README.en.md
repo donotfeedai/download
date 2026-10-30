@@ -48,7 +48,8 @@ All releases (with version numbers and changelogs):
 | **[donotfeedai-windows-setup.exe](https://github.com/donotfeedai/download/releases/latest/download/donotfeedai-windows-setup.exe)** | **Windows 10/11** - program and extension: per-user installer, no administrator rights. Code-signed (certificate issued by Microsoft), publisher: Sebastian Obara It&Consulting |
 | **[donotfeedai-windows.msi](https://github.com/donotfeedai/download/releases/latest/download/donotfeedai-windows.msi)** | **Windows 10/11, for IT departments** - the same program and extension as in the installer, for deployment through Group Policy, Intune and SCCM (per-computer or per-user install); details in [INSTALL.en.md](INSTALL.en.md#windows). Code-signed |
 | **[donotfeedai-wtyczka-chrome.zip](https://github.com/donotfeedai/download/releases/latest/download/donotfeedai-wtyczka-chrome.zip)** | **Chrome** (macOS) - extension, loaded unpacked; on Windows the Chrome and Edge extension comes with the installer |
-| **[donotfeedai-wtyczka-firefox.xpi](https://donotfeedai.com/pobierz/donotfeedai-wtyczka-firefox.xpi)** | **Firefox** - extension signed by Mozilla: open the link in Firefox and click **Add**, it stays installed ([same file on GitHub](https://github.com/donotfeedai/download/releases/latest/download/donotfeedai-wtyczka-firefox.xpi)) |
+| **[Mozilla store (addons.mozilla.org)](https://addons.mozilla.org/firefox/addon/donotfeedai/)** | **Firefox** - the extension in the Mozilla store: click **Add to Firefox**, then **Add**; it stays installed and updates itself |
+| [donotfeedai-wtyczka-firefox.xpi](https://donotfeedai.com/pobierz/donotfeedai-wtyczka-firefox.xpi) | Firefox - the same extension as a file, only for manual installs or deployments ([same file on GitHub](https://github.com/donotfeedai/download/releases/latest/download/donotfeedai-wtyczka-firefox.xpi)) |
 | [donotfeedai-wtyczka-firefox.zip](https://github.com/donotfeedai/download/releases/latest/download/donotfeedai-wtyczka-firefox.zip) | Firefox - the same extension unsigned, for testing as a temporary add-on |
 | **[SHA256SUMS.txt](https://github.com/donotfeedai/download/releases/latest/download/SHA256SUMS.txt)** | checksums for the downloaded files |
 
@@ -147,7 +148,7 @@ Short version (full steps: [INSTALL.en.md](INSTALL.en.md)):
 1. **Program**: on macOS open `donotfeedai-macos.pkg` and follow the installer (it asks for an administrator
    password because it installs into `/Applications`). On Windows run `donotfeedai-windows-setup.exe` (no
    administrator rights; about signing and SmartScreen see [INSTALL.en.md](INSTALL.en.md#windows)).
-2. **Extension**: Firefox (Windows and macOS) - open [donotfeedai-wtyczka-firefox.xpi](https://donotfeedai.com/pobierz/donotfeedai-wtyczka-firefox.xpi) in it and click **Add**.
+2. **Extension**: Firefox (Windows and macOS) - open the [extension page in the Mozilla store](https://addons.mozilla.org/firefox/addon/donotfeedai/), click **Add to Firefox**, then **Add**.
    Chrome and Edge on Windows - the extension comes with the installer, a page with instructions opens at the end.
    Chrome on macOS - unzip `donotfeedai-wtyczka-chrome.zip`, go to `chrome://extensions`, enable developer
    mode and point it at the unpacked folder. Edge on macOS is not supported.
@@ -158,8 +159,8 @@ Short version (full steps: [INSTALL.en.md](INSTALL.en.md)):
 
 | system | extension | program |
 |---|---|---|
-| macOS | Chrome: load unpacked (Edge on macOS is not supported); Firefox: signed `.xpi` | `donotfeedai-macos.pkg` |
-| Windows | in the installer (Chrome, Edge: load unpacked); Firefox: signed `.xpi` | `donotfeedai-windows-setup.exe` (code-signed) or, for IT departments, `donotfeedai-windows.msi` |
+| macOS | Chrome: load unpacked (Edge on macOS is not supported); Firefox: Mozilla store | `donotfeedai-macos.pkg` |
+| Windows | in the installer (Chrome, Edge: load unpacked); Firefox: Mozilla store | `donotfeedai-windows-setup.exe` (code-signed) or, for IT departments, `donotfeedai-windows.msi` |
 
 ## Tiers
 

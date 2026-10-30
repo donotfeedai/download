@@ -48,7 +48,8 @@ Wszystkie wydania (z numerami wersji i opisem zmian):
 | **[donotfeedai-windows-setup.exe](https://github.com/donotfeedai/download/releases/latest/download/donotfeedai-windows-setup.exe)** | **Windows 10/11** - program i wtyczka: instalator na koncie użytkownika, bez uprawnień administratora. Podpisany cyfrowo (certyfikat wydany przez Microsoft), wydawca: Sebastian Obara It&Consulting |
 | **[donotfeedai-windows.msi](https://github.com/donotfeedai/download/releases/latest/download/donotfeedai-windows.msi)** | **Windows 10/11, dla działów IT** - ten sam program i wtyczka co w instalatorze, do wdrożeń przez zasady grupy, Intune i SCCM (instalacja na komputer lub na użytkownika); szczegóły w [INSTALACJA.md](INSTALACJA.md#windows). Podpisany cyfrowo |
 | **[donotfeedai-wtyczka-chrome.zip](https://github.com/donotfeedai/download/releases/latest/download/donotfeedai-wtyczka-chrome.zip)** | **Chrome** (macOS) - wtyczka do załadowania jako rozpakowana; na Windows wtyczka do Chrome i Edge jest w instalatorze |
-| **[donotfeedai-wtyczka-firefox.xpi](https://donotfeedai.com/pobierz/donotfeedai-wtyczka-firefox.xpi)** | **Firefox** - wtyczka podpisana przez Mozillę: otwórz link w Firefoksie i kliknij **Dodaj**, zostaje na stałe ([ten sam plik na GitHubie](https://github.com/donotfeedai/download/releases/latest/download/donotfeedai-wtyczka-firefox.xpi)) |
+| **[Sklep Mozilli (addons.mozilla.org)](https://addons.mozilla.org/firefox/addon/donotfeedai/)** | **Firefox** - wtyczka w sklepie Mozilli: kliknij **Dodaj do Firefoksa**, potem **Dodaj**; zostaje na stałe i aktualizuje się sama |
+| [donotfeedai-wtyczka-firefox.xpi](https://donotfeedai.com/pobierz/donotfeedai-wtyczka-firefox.xpi) | Firefox - ta sama wtyczka jako plik, tylko do instalacji ręcznej lub wdrożeń ([ten sam plik na GitHubie](https://github.com/donotfeedai/download/releases/latest/download/donotfeedai-wtyczka-firefox.xpi)) |
 | [donotfeedai-wtyczka-firefox.zip](https://github.com/donotfeedai/download/releases/latest/download/donotfeedai-wtyczka-firefox.zip) | Firefox - ta sama wtyczka bez podpisu, do testów jako dodatek tymczasowy |
 | **[SHA256SUMS.txt](https://github.com/donotfeedai/download/releases/latest/download/SHA256SUMS.txt)** | sumy kontrolne pobranych plików |
 
@@ -145,7 +146,7 @@ Skrót (pełna wersja: [INSTALACJA.md](INSTALACJA.md)):
 1. **Program**: na macOS otwórz `donotfeedai-macos.pkg` i przejdź instalator (poprosi o hasło administratora,
    bo instaluje program w `/Applications`). Na Windows uruchom `donotfeedai-windows-setup.exe` (bez uprawnień
    administratora; o podpisie i SmartScreen - patrz [INSTALACJA.md](INSTALACJA.md#windows)).
-2. **Wtyczka**: Firefox (Windows i macOS) - otwórz w nim [donotfeedai-wtyczka-firefox.xpi](https://donotfeedai.com/pobierz/donotfeedai-wtyczka-firefox.xpi) i kliknij **Dodaj**.
+2. **Wtyczka**: Firefox (Windows i macOS) - otwórz w nim [stronę wtyczki w sklepie Mozilli](https://addons.mozilla.org/firefox/addon/donotfeedai/), kliknij **Dodaj do Firefoksa**, a potem **Dodaj**.
    Chrome i Edge na Windows - wtyczka jest już w instalatorze, na koniec otworzy się strona z instrukcją.
    Chrome na macOS - rozpakuj `donotfeedai-wtyczka-chrome.zip`, wejdź w `chrome://extensions`, włącz tryb
    dewelopera i wskaż rozpakowany folder. Edge na macOS nie jest obsługiwany.
@@ -156,8 +157,8 @@ Skrót (pełna wersja: [INSTALACJA.md](INSTALACJA.md)):
 
 | system | wtyczka | program |
 |---|---|---|
-| macOS | Chrome: load unpacked (Edge na macOS nie jest obsługiwany); Firefox: podpisany `.xpi` | `donotfeedai-macos.pkg` |
-| Windows | w instalatorze (Chrome, Edge: load unpacked); Firefox: podpisany `.xpi` | `donotfeedai-windows-setup.exe` (podpisany cyfrowo) albo, dla działów IT, `donotfeedai-windows.msi` |
+| macOS | Chrome: load unpacked (Edge na macOS nie jest obsługiwany); Firefox: sklep Mozilli | `donotfeedai-macos.pkg` |
+| Windows | w instalatorze (Chrome, Edge: load unpacked); Firefox: sklep Mozilli | `donotfeedai-windows-setup.exe` (podpisany cyfrowo) albo, dla działów IT, `donotfeedai-windows.msi` |
 
 ## Poziomy
 

@@ -19,9 +19,9 @@ supported.
    alone. If it does not, check the signature: `pkgutil --check-signature donotfeedai-macos.pkg`.
 
 2. **Extension**:
-   - Firefox: open [donotfeedai.com/pobierz/donotfeedai-wtyczka-firefox.xpi](https://donotfeedai.com/pobierz/donotfeedai-wtyczka-firefox.xpi) in Firefox, click
-     **Continue to Installation** and **Add**. The extension is signed by Mozilla and stays installed, no developer
-     mode needed. The same file is in the release as `donotfeedai-wtyczka-firefox.xpi`.
+   - Firefox: open [addons.mozilla.org/firefox/addon/donotfeedai](https://addons.mozilla.org/firefox/addon/donotfeedai/) in Firefox, click **Add to Firefox**, then **Add**.
+     The extension comes from the Mozilla store, stays installed (no developer mode needed) and updates itself.
+     The [`donotfeedai-wtyczka-firefox.xpi`](https://donotfeedai.com/pobierz/donotfeedai-wtyczka-firefox.xpi) file is only for manual installs or deployments.
    - Chrome (Edge is not supported on macOS): unzip `donotfeedai-wtyczka-chrome.zip` somewhere permanent
      (e.g. `~/Documents`), then `chrome://extensions` → **Developer mode** → **Load unpacked** → pick the
      `donotfeedai-wtyczka-chrome-<version>` folder (the one with `manifest.json` inside).
@@ -55,8 +55,8 @@ Windows 10 and 11 (x64), including Windows 11 on ARM.
    `%LOCALAPPDATA%\Programs\donotfeedai\wtyczka-chrome` - nothing to download or unzip. In `edge://extensions`
    (Chrome: `chrome://extensions`) turn on **Developer mode** (in Edge the switch is at the bottom of the left pane),
    click **Load unpacked**, paste the path above into the address bar of the folder dialog, press Enter and click
-   **Select Folder**. Firefox: open [donotfeedai.com/pobierz/donotfeedai-wtyczka-firefox.xpi](https://donotfeedai.com/pobierz/donotfeedai-wtyczka-firefox.xpi) and click
-   **Continue to Installation** → **Add** (signed by Mozilla, stays installed). No browser restart is needed.
+   **Select Folder**. Firefox: open [addons.mozilla.org/firefox/addon/donotfeedai](https://addons.mozilla.org/firefox/addon/donotfeedai/), click
+   **Add to Firefox** → **Add** (from the Mozilla store, stays installed and updates itself). No browser restart is needed.
 
 3. **Check**: click the puzzle icon, pin Do Not Feed AI and click its icon - the panel should show the program as
    connected. Later installer versions also update the extension in the same folder (the browser loads the new
